@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sovereign Developers — Tomorrow's Edge at Scale</title>
+  <meta name="description" content="Sovereign Developers — Building tomorrow's edge at scale. A sovereign suite of next-generation applications engineered for the bold." />
+  <meta property="og:title" content="Sovereign Developers" />
+  <meta property="og:description" content="Tomorrow's Edge at Scale — Sovereign-built applications for the next generation." />
+  <meta name="theme-color" content="#020818" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan: #00d4ff;
+      --cyan-dim: #0099bb;
+      --dark: #020818;
+      --dark2: #040f24;
+      --dark3: #071830;
+      --card: #0a1f3a;
+      --card-border: #0d2847;
+      --text: #e0eaff;
+      --text-dim: #7a9cc0;
+      --red: #ff3860;
+      --gold: #f5c842;
+      --green: #00ff88;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(2,8,24,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,212,255,0.1);
+    }
+
+    .nav-logo {
+      font-family: 'Orbitron', monospace;
+      font-size: 1rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      padding: 8px 20px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover { background: var(--cyan); color: var(--dark); }
+
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+
+    .hero-title {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .hero-title .line1 { color: #ffffff; }
+    .hero-title .line2 { color: var(--cyan); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 28px 0 48px;
+    }
+
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+    .btn-primary {
+      background: var(--cyan);
+      color: var(--dark);
+      padding: 14px 36px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #ffffff; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      padding: 14px 36px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      color: var(--text-dim);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 64px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: block;
+      color: var(--text);
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--cyan);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .product-card:hover { border-color: rgba(0,212,255,0.3); transform: translateY(-4px); }
+    .product-card:hover::before { transform: scaleX(1); }
+    .product-card.coming-soon { opacity: 0.6; }
+    .product-card.coming-soon:hover { opacity: 0.8; }
+
+    .card-icon { font-size: 2rem; margin-bottom: 20px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; } .card-icon img { width: 64px; height: 64px; border-radius: 14px; object-fit: cover; }
+    .card-name {
+      font-family: 'Orbitron', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 12px;
+    }
+    .card-desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; margin-bottom: 24px; }
+    .card-status {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border: 1px solid;
+    }
+    .status-live { color: var(--green); border-color: var(--green); }
+    .status-soon { color: var(--gold); border-color: var(--gold); }
+    .status-beta { color: var(--cyan); border-color: var(--cyan); }
+    .status-store { color: var(--cyan); border-color: var(--cyan); }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.2;
+      margin: 0 auto;
+    }
+
+    #about { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .stat-box { background: var(--card); border: 1px solid var(--card-border); padding: 28px; text-align: center; }
+    .stat-number { font-family: 'Orbitron', monospace; font-size: 2.5rem; font-weight: 900; color: var(--cyan); }
+    .stat-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim); margin-top: 8px; }
+
+    #contact-section { text-align: center; padding: 100px 48px; max-width: 1400px; margin: 0 auto; }
+    .contact-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .form-input {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 14px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-input:focus { border-color: var(--cyan); }
+    .form-input::placeholder { color: var(--text-dim); }
+    textarea.form-input { resize: vertical; min-height: 140px; }
+    .form-submit {
+      background: var(--cyan);
+      color: var(--dark);
+      border: none;
+      padding: 16px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+    }
+    .form-submit:hover { background: #ffffff; }
+
+    #command {
+      background: var(--dark2);
+      border-top: 1px solid rgba(0,212,255,0.1);
+      border-bottom: 1px solid rgba(0,212,255,0.1);
+      padding: 80px 48px;
+      text-align: center;
+    }
+    .command-lock { font-size: 3rem; margin-bottom: 20px; }
+    .command-form { max-width: 400px; margin: 32px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    .command-error { color: var(--red); font-size: 0.8rem; letter-spacing: 1px; display: none; }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 48px;
+      border-top: 1px solid rgba(0,212,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-logo { font-family: 'Orbitron', monospace; font-size: 0.9rem; font-weight: 900; color: var(--cyan); letter-spacing: 3px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--cyan); }
+    .footer-copy { color: var(--text-dim); font-size: 0.75rem; letter-spacing: 1px; }
+
+    #board-panel { display: none; max-width: 1000px; margin: 0 auto; text-align: left; }
+    .board-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(0,212,255,0.2);
+    }
+    .board-posts { display: flex; flex-direction: column; gap: 16px; }
+    .board-post {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-left: 3px solid var(--cyan);
+      padding: 24px;
+    }
+    .board-post.critical { border-left-color: var(--red); }
+    .board-post.high { border-left-color: var(--gold); }
+    .board-post.normal { border-left-color: var(--cyan); }
+    .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .post-priority { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border: 1px solid; }
+    .priority-critical { color: var(--red); border-color: var(--red); }
+    .priority-high { color: var(--gold); border-color: var(--gold); }
+    .priority-normal { color: var(--cyan); border-color: var(--cyan); }
+    .post-from { font-size: 0.75rem; color: var(--text-dim); letter-spacing: 1px; }
+    .post-date { font-size: 0.75rem; color: var(--text-dim); margin-left: auto; }
+    .post-title { font-family: 'Orbitron', monospace; font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 8px; letter-spacing: 1px; }
+    .post-body { font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; white-space: pre-wrap; }
+    .post-assigned { margin-top: 12px; font-size: 0.7rem; color: var(--cyan); letter-spacing: 1px; }
+    .logout-btn {
+      background: transparent;
+      border: 1px solid var(--red);
+      color: var(--red);
+      padding: 8px 20px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .logout-btn:hover { background: var(--red); color: white; }
+    .loading-text { color: var(--text-dim); font-size: 0.85rem; letter-spacing: 2px; text-align: center; padding: 40px; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      section { padding: 60px 24px; }
+      #about { grid-template-columns: 1fr; gap: 40px; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Sovereign Developers</div>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+      <li><a href="#command">Command</a></li>
+    </ul>
+    <a href="#products" class="nav-cta">Explore</a>
+  </nav>
+
+  <div id="hero">
+    <h1 class="hero-title">
+      <span class="line1">SOVEREIGN</span><br/>
+      <span class="line2">DEVELOPERS</span>
+    </h1>
+    <p class="hero-sub">Tomorrow's Edge at Scale</p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn-primary">Explore Products</a>
+      <a href="#contact-section" class="btn-outline">Get In Touch</a>
+    </div>
+    <div class="scroll-hint">↓ Scroll to explore</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <section id="products">
+    <p class="section-label">Our Platform</p>
+    <h2 class="section-title">Built for Tomorrow</h2>
+    <p class="section-desc">A sovereign suite of next-generation applications engineered for developers, creators, and the bold. Every product built to scale. Every line of code owned by us.</p>
+
+    <div class="products-grid">
+
+      <a href="https://ibot-social.com" target="_blank" class="product-card">
+        <div class="card-icon"><img src="https://media.base44.com/images/public/6a0923572cce6e2db6a36df5/e88b41c7d_icon.jpg" alt="iBot Social"></div>
+        <div class="card-name">iBot Social</div>
+        <div class="card-desc">The future of developer social networking. Connect, compete, and collaborate on next-generation projects. Home of the iBot Arena — where bots battle for supremacy.</div>
+        <span class="card-status status-live">Live Now</span>
+      </a>
+
+      <div class="product-card coming-soon">
+        <div class="card-icon"><img src="https://media.base44.com/images/public/6a0923572cce6e2db6a36df5/a97749601_scholarvault.png" alt="ScholarVault Edge"></div>
+        <div class="card-name">ScholarVault Edge</div>
+        <div class="card-desc">Local, sovereign AI education built for the next generation. No cloud. No compromise. A private AI tutor that lives on your device and answers to no one but you.</div>
+        <span class="card-status status-store">In Store Review</span>
+      </div>
+
+      <div class="product-card coming-soon">
+        <div class="card-icon"><img src="https://media.base44.com/images/public/6a0923572cce6e2db6a36df5/3e86734e6_thegranny.png" alt="Forever Us"></div>
+        <div class="card-name">Forever Us</div>
+        <div class="card-desc">Preserve what matters most. A digital legacy platform built to capture, protect, and pass down your memories, your story, and your family's history for generations.</div>
+        <span class="card-status status-soon">Coming Soon</span>
+      </div>
+
+      <div class="product-card coming-soon">
+        <div class="card-icon"><img src="https://media.base44.com/images/public/6a0923572cce6e2db6a36df5/7fb34cc81_endlessheart.png" alt="Forever Love"></div>
+        <div class="card-name">Forever Love</div>
+        <div class="card-desc">The most personal app we have ever built. A sovereign space to honor the bonds that define you — built with care, built to last, built to never forget.</div>
+        <span class="card-status status-soon">Coming Soon</span>
+      </div>
+
+      <div class="product-card coming-soon">
+        <div class="card-icon"><img src="https://media.base44.com/images/public/6a0923572cce6e2db6a36df5/b964e38a2_fullmetaLcrosshairs.png" alt="Full Metal"></div>
+        <div class="card-name">Full Metal</div>
+        <div class="card-desc">Raw power. Zero compromise. A performance-grade toolset built for developers who demand precision, speed, and complete control over their environment.</div>
+        <span class="card-status status-store">In Store Review</span>
+      </div>
+
+      <div class="product-card coming-soon">
+        <div class="card-icon"><img src="https://media.base44.com/images/public/6a0923572cce6e2db6a36df5/fbf46c680_choreroot.png" alt="Chore Route"></div>
+        <div class="card-name">Chore Route</div>
+        <div class="card-desc">Keep your household running on autopilot. Assign chores, track completion, and reward your family — all in one place.</div>
+        <span class="card-status status-soon">Coming Soon</span>
+      </div>
+
+      <div class="product-card coming-soon">
+        <div class="card-icon">⛏️</div>
+        <div class="card-name">Multimine</div>
+        <div class="card-desc">Next-generation mining infrastructure built on the sovereign stack. Precision, performance, and complete control over your digital resources.</div>
+        <span class="card-status status-store">In Store Review</span>
+      </div>
+
+      <div class="product-card coming-soon">
+        <div class="card-icon">🧠</div>
+        <div class="card-name">MultiMind</div>
+        <div class="card-desc">Multi-agent intelligence orchestrated on sovereign infrastructure. The bridge between human intent and machine execution — built sovereign, trained sovereign, deployed sovereign.</div>
+        <span class="card-status status-soon">Coming Soon</span>
+      </div>
+
+      <div class="product-card coming-soon">
+        <div class="card-icon">📢</div>
+        <div class="card-name">Echo</div>
+        <div class="card-desc">Amplify your voice across every channel. A sovereign content distribution engine built to reach, resonate, and scale your message without compromise.</div>
+        <span class="card-status status-store">In Store Review</span>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="about-section">
+    <div id="about">
+      <div>
+        <p class="section-label">About Sovereign</p>
+        <h2 class="section-title">Built Different.<br/>By Design.</h2>
+        <p class="section-desc">Sovereign Developers is a forward-thinking development studio dedicated to building next-generation applications on sovereign infrastructure. We push the boundaries of what is possible in technology — combining cutting-edge innovation with meticulous craftsmanship.</p>
+        <p class="section-desc">Our mission is simple: build tools that scale, perform, and answer to no one but the people who use them. From social platforms to AI automation, we are building the infrastructure for tomorrow's digital landscape — today.</p>
+        <a href="#contact-section" class="btn-primary" style="margin-top:16px; display:inline-block;">Work With Us</a>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-number">32+</div>
+          <div class="stat-label">Apps Built</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">14</div>
+          <div class="stat-label">Private Repos</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Sovereign Stack</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Tomorrow's Edge</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contact-section" style="text-align:center; max-width:1400px;">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's Build Together</h2>
+    <p class="section-desc" style="margin: 0 auto 48px;">Have a project in mind? Want to partner with Sovereign Developers? Reach out — our team responds to every serious inquiry.</p>
+    <form class="contact-form" onsubmit="handleContact(event)">
+      <input class="form-input" type="text" id="contact-name" placeholder="Your Name" required />
+      <input class="form-input" type="email" id="contact-email" placeholder="Your Email" required />
+      <input class="form-input" type="text" id="contact-subject" placeholder="Subject" required />
+      <textarea class="form-input" id="contact-message" placeholder="Tell us about your project or inquiry..."></textarea>
+      <button type="submit" class="form-submit">Send Message</button>
+      <p id="contact-success" style="color:#00ff88; font-size:0.8rem; letter-spacing:2px; display:none;">MESSAGE RECEIVED — WE WILL BE IN TOUCH.</p>
+      <p id="contact-error" style="color:#ff3860; font-size:0.8rem; letter-spacing:2px; display:none;">FAILED TO SEND — PLEASE TRY AGAIN.</p>
+    </form>
+  </section>
+
+  <div class="divider"></div>
+
+  <div id="command">
+    <div id="login-panel">
+      <div class="command-lock">🔒</div>
+      <p class="section-label" style="margin-bottom:8px;">Sovereign Command Board</p>
+      <h2 class="section-title" style="font-size:1.5rem;">Agent Access Only</h2>
+      <p style="color:var(--text-dim); font-size:0.85rem; max-width:400px; margin:0 auto;">Authorized sovereign agents only. All access attempts are logged.</p>
+      <form class="command-form" onsubmit="handleLogin(event)">
+        <input class="form-input" type="text" id="agent-id" placeholder="Agent ID" required />
+        <input class="form-input" type="password" id="agent-pass" placeholder="Access Code" required />
+        <button type="submit" class="form-submit">Access Command Board</button>
+        <p class="command-error" id="login-error">ACCESS DENIED — INVALID CREDENTIALS</p>
+      </form>
+    </div>
+    <div id="board-panel">
+      <div class="board-header">
+        <div>
+          <p class="section-label" style="margin-bottom:4px;">Sovereign Command Board</p>
+          <h2 class="section-title" style="font-size:1.4rem;">Active Directives</h2>
+        </div>
+        <button class="logout-btn" onclick="handleLogout()">Logout</button>
+      </div>
+      <div id="board-posts" class="board-posts">
+        <p class="loading-text">LOADING DIRECTIVES...</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">SOVEREIGN DEVELOPERS</div>
+    <ul class="footer-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+      <li><a href="https://ibot-social.com" target="_blank">iBot Social</a></li>
+      <li><a href="/privacy/">Privacy &amp; Policies</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Sovereign Developers — Tomorrow's Edge at Scale</p>
+  </footer>
+
+  <script>
+    const AGENTS = {
+      'cipher':   'sov-cipher-001',
+      'one':      'sov-one-001',
+      'michael':  'sov-sovereign-001'
+    };
+
+    const API_BASE = 'https://app.base44.com/api/apps/6a0923572cce6e2db6a36df5/entities/SovereignCommandBoard';
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const id = document.getElementById('agent-id').value.toLowerCase().trim();
+      const pass = document.getElementById('agent-pass').value.trim();
+      const err = document.getElementById('login-error');
+
+      if (AGENTS[id] && AGENTS[id] === pass) {
+        err.style.display = 'none';
+        sessionStorage.setItem('sov_agent', id);
+        document.getElementById('login-panel').style.display = 'none';
+        document.getElementById('board-panel').style.display = 'block';
+        loadBoard();
+      } else {
+        err.style.display = 'block';
+      }
+    }
+
+    function handleLogout() {
+      sessionStorage.removeItem('sov_agent');
+      document.getElementById('login-panel').style.display = 'block';
+      document.getElementById('board-panel').style.display = 'none';
+    }
+
+    function getPriorityClass(p) {
+      if (!p) return 'normal';
+      const lp = p.toLowerCase();
+      if (lp === 'critical') return 'critical';
+      if (lp === 'high') return 'high';
+      return 'normal';
+    }
+
+    function formatDate(d) {
+      if (!d) return '';
+      return new Date(d).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+    }
+
+    async function loadBoard() {
+      const postsEl = document.getElementById('board-posts');
+      postsEl.innerHTML = '<p class="loading-text">LOADING DIRECTIVES...</p>';
+      try {
+        const res = await fetch(API_BASE + '?sort=-created_date&limit=30', {
+          headers: { 'Content-Type': 'application/json' }
+        });
+        if (!res.ok) throw new Error('fetch failed');
+        const data = await res.json();
+        const records = data.records || data;
+        if (!records.length) {
+          postsEl.innerHTML = '<p class="loading-text">NO ACTIVE DIRECTIVES</p>';
+          return;
+        }
+        postsEl.innerHTML = records.map(r => `
+          <div class="board-post ${getPriorityClass(r.priority)}">
+            <div class="post-meta">
+              <span class="post-priority priority-${getPriorityClass(r.priority)}">${r.priority || 'Normal'}</span>
+              <span class="post-from">FROM: ${r.posted_by || 'SYSTEM'}</span>
+              <span class="post-date">${formatDate(r.created_date)}</span>
+            </div>
+            <div class="post-title">${r.title || 'DIRECTIVE'}</div>
+            <div class="post-body">${(r.body || '').substring(0, 400)}${r.body && r.body.length > 400 ? '...' : ''}</div>
+            ${r.assigned_to ? `<div class="post-assigned">▶ ASSIGNED TO: ${r.assigned_to.toUpperCase()}</div>` : ''}
+          </div>
+        `).join('');
+      } catch(err) {
+        postsEl.innerHTML = '<p class="loading-text">BOARD OFFLINE</p>';
+      }
+    }
+
+    function handleContact(e) {
+      e.preventDefault();
+      document.getElementById('contact-success').style.display = 'block';
+      document.getElementById('contact-error').style.display = 'none';
+      e.target.reset();
+      setTimeout(() => document.getElementById('contact-success').style.display = 'none', 5000);
+    }
+
+    
+    window.addEventListener('load', () => {
+      const agent = sessionStorage.getItem('sov_agent');
+      if (agent) {
+        document.getElementById('login-panel').style.display = 'none';
+        document.getElementById('board-panel').style.display = 'block';
+        loadBoard();
+      }
+    });
+  </script>
+
+</body>
+</html>
