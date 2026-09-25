@@ -1,0 +1,15 @@
+{
+  "description": "<2-4 sentence description>",
+  "icon": "static/apps/<slug>-icon.png",
+  "name": "<App Name>",
+  "play_url": null,
+  "screenshots": [
+    {
+      "src": "static/apps/<slug>-shot-1.jpg",
+      "caption": "<what the user sees>"
+    }
+  ],
+  "slug": "<slug>",
+  "status": "coming_soon",
+  "tagline": "<one-line hook>"
+}
