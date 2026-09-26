@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Sovereign Developers</title>
+  <meta name="description" content="Privacy Policy for all Sovereign Developers applications — Tomorrow's Edge at Scale." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9889;</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cyan: #00d4ff; --cyan-dim: #0099bb;
+      --dark: #020818; --dark2: #040f24; --dark3: #071830;
+      --card: #0a1f3a; --card-border: #0d2847;
+      --text: #e0eaff; --text-dim: #7a9cc0;
+      --green: #00ff88; --gold: #f5c842; --red: #ff3860;
+    }
+    body {
+      background: var(--dark); color: var(--text);
+      font-family: 'Inter', sans-serif; line-height: 1.7;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px; pointer-events: none; z-index: 0;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 48px; background: rgba(2,8,24,0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,212,255,0.1);
+    }
+    .nav-logo { font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 900; color: var(--cyan); letter-spacing: 3px; text-transform: uppercase; text-decoration: none; }
+    .nav-back { color: var(--text-dim); text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-back:hover { color: var(--cyan); }
+    .container { max-width: 800px; margin: 0 auto; padding: 120px 24px 60px; position: relative; z-index: 1; }
+    h1 { font-family: 'Orbitron', monospace; font-size: 2rem; letter-spacing: 3px; margin-bottom: 8px; color: #fff; }
+    .subtitle { color: var(--cyan); font-family: 'Orbitron', monospace; font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 8px; }
+    .updated { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 40px; }
+    h2 { font-size: 1.1rem; color: var(--cyan); margin: 32px 0 12px; font-family: 'Orbitron', monospace; letter-spacing: 1px; text-transform: uppercase; }
+    h3 { font-size: 1rem; color: #fff; margin: 24px 0 8px; font-family: 'Orbitron', monospace; letter-spacing: 1px; }
+    p { color: var(--text-dim); margin-bottom: 16px; }
+    ul { color: var(--text-dim); margin-bottom: 16px; padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--text); }
+    .app-list {
+      display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 24px;
+    }
+    .app-tag {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 6px; padding: 8px 16px; color: var(--cyan);
+      font-size: 0.85rem; font-family: 'Orbitron', monospace; letter-spacing: 1px;
+    }
+    .app-section {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 24px; margin: 16px 0;
+    }
+    .app-section h3 { margin-top: 0; }
+    .deletion-notice {
+      border: 1px solid rgba(255,56,96,0.3); background: rgba(255,56,96,0.05);
+      border-radius: 8px; padding: 16px 20px; margin: 24px 0;
+    }
+    .deletion-notice p { color: #ff3860; font-size: 0.9rem; margin: 0; }
+    .back-link { display: inline-block; margin-top: 40px; color: var(--cyan); font-size: 0.85rem; letter-spacing: 1px; text-decoration: none; }
+    footer { position: relative; z-index: 1; padding: 32px 48px; border-top: 1px solid rgba(0,212,255,0.1); text-align: center; }
+    footer p { color: var(--text-dim); font-size: 0.75rem; letter-spacing: 1px; }
+    @media (max-width: 768px) { nav { padding: 16px 24px; } .container { padding: 100px 16px 40px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="https://sovereigndevelopers.org" class="nav-logo">Sovereign</a>
+    <a href="https://sovereigndevelopers.org" class="nav-back">Home</a>
+  </nav>
+
+  <div class="container">
+    <p class="subtitle">Sovereign Developers LLC</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: July 28, 2026</p>
+
+    <h2>1. Introduction</h2>
+    <p>This Privacy Policy applies to all applications developed and published by Sovereign Developers LLC ("Sovereign Developers", "we", "us", or "our"). We believe privacy is a fundamental right. All Sovereign Developers applications are built on a local-first, sovereign architecture &mdash; meaning your data stays on your device whenever possible.</p>
+
+    <p>This policy covers the following applications. New applications may be added to this list at any time without requiring a separate privacy policy URL.</p>
+
+    <h2>Covered Applications</h2>
+    <div class="app-list">
+      <span class="app-tag">Echo</span>
+      <span class="app-tag">MultiMind</span>
+      <span class="app-tag">Multimine</span>
+      <span class="app-tag">ScholarVault Edge</span>
+      <span class="app-tag">Forever Us</span>
+      <span class="app-tag">Forever Love</span>
+      <span class="app-tag">Full Metal</span>
+      <span class="app-tag">iBot Social</span>
+      <span class="app-tag">AI Nexus</span>
+      <span class="app-tag">SovereignSuite</span>
+      <span class="app-tag">Stage Clash Arena</span>
+    </div>
+
+    <h2>2. Data We Collect</h2>
+    <p>All Sovereign Developers applications may collect and process the following types of data:</p>
+    <ul>
+      <li><strong>Account Information:</strong> Email address and display name when you create an account.</li>
+      <li><strong>User-Generated Content:</strong> Any content you create within the app &mdash; posts, journals, entries, uploads, media, configurations, or other app-specific data. Stored locally on your device.</li>
+      <li><strong>Usage Data:</strong> Feature usage patterns and app engagement to improve performance and user experience.</li>
+      <li><strong>Device Information:</strong> Device model, OS version, and app version for compatibility and support.</li>
+    </ul>
+
+    <h2>3. How We Use Your Data</h2>
+    <ul>
+      <li>Provide, maintain, and improve application functionality.</li>
+      <li>Personalize your experience within the app.</li>
+      <li>Optimize performance for your specific device and environment.</li>
+      <li>Provide customer support when requested.</li>
+    </ul>
+    <p>We do NOT sell, rent, or trade your personal data to third parties. We do NOT use your data for advertising. We do NOT share it with data brokers.</p>
+
+    <h2>4. Data Storage</h2>
+    <p>All Sovereign Developers applications follow a local-first, sovereign architecture. User-generated content, configurations, and preferences are stored locally on your device. Account credentials are stored securely on our servers for authentication purposes only. AI processing is performed locally on your device or on sovereign infrastructure owned and controlled by Sovereign Developers &mdash; no third-party cloud AI services are used.</p>
+
+    <h2>5. Data Sharing</h2>
+    <p>We do not sell, rent, or trade your personal data to third parties. We do not share your data with advertisers or analytics networks. Your data remains private and under your control at all times. Content is shared only with parties you explicitly authorize within the app (e.g., family members you designate in Forever Us).</p>
+
+    <h2>6. Third-Party Services</h2>
+    <p>Sovereign Developers applications do not use third-party analytics, advertising, or tracking SDKs. All processing is performed locally or on sovereign infrastructure owned by Sovereign Developers. No data is sent to external AI services or third-party cloud providers for processing.</p>
+
+    <h2>7. Your Rights</h2>
+    <ul>
+      <li>Access your personal data.</li>
+      <li>Delete your account and all associated data.</li>
+      <li>Export your content at any time (available in app Settings).</li>
+      <li>Withdraw consent for data processing at any time.</li>
+      <li>Request data deletion without using the app &mdash; see <a href="/data-deletion">Data Deletion</a>.</li>
+    </ul>
+
+    <div class="deletion-notice">
+      <p>To request account or data deletion, visit <a href="/data-deletion">sovereigndevelopers.org/data-deletion</a> or email <a href="mailto:support@sovereigndevelopers.org?subject=Data%20Deletion%20Request">support@sovereigndevelopers.org</a>.</p>
+    </div>
+
+    <h2>8. Data Security</h2>
+    <p>We use industry-standard encryption for data in transit and at rest. Local data leverages device-level encryption when available. Account passwords are hashed. Session tokens expire and rotate.</p>
+
+    <h2>9. Data Retention</h2>
+    <p>Data is retained while your account is active. You may delete your account at any time. All data is permanently removed within 30 days of a deletion request.</p>
+
+    <h2>10. Children's Privacy</h2>
+    <p>Most Sovereign Developers applications are intended for users 13 and older. ScholarVault Edge is an educational application and complies with applicable child privacy protection laws (COPPA). We do not knowingly collect more information than necessary to provide the educational service. Parents may contact us to review or delete their child's data at any time. Forever Love is intended for users 18 and older.</p>
+
+    <h2>11. App-Specific Data Details</h2>
+    <p>The sections below describe data collection specific to individual applications. All general provisions above apply to every app listed.</p>
+
+    <div class="app-section">
+      <h3>Echo &mdash; AI Content &amp; Voice</h3>
+      <ul>
+        <li><strong>Channel Connections:</strong> OAuth tokens for connected social accounts, used solely to post content on your behalf. We never read or store your private messages from connected platforms.</li>
+        <li><strong>Voice Model:</strong> Writing style analysis, tone patterns, and vocabulary preferences. Stored locally on your device.</li>
+        <li><strong>Content Data:</strong> Posts, messages, and media you create and distribute. Stored locally.</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <h3>MultiMind &mdash; AI Journal &amp; Mind Map</h3>
+      <ul>
+        <li><strong>Journal Data:</strong> Thoughts, dreams, relationship entries, and mood check-ins. Stored locally on your device.</li>
+        <li><strong>Personality Analysis:</strong> AI-generated insights, pattern detections, and mind map data. Stored locally.</li>
+        <li>MultiMind is a journaling and self-reflection tool, not a medical device. It does not diagnose, treat, or cure any condition.</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <h3>Multimine &mdash; Mining Infrastructure</h3>
+      <ul>
+        <li><strong>Mining Configuration:</strong> Resource settings, mining parameters, and performance profiles. Stored locally.</li>
+        <li><strong>Performance Data:</strong> Hash rates, resource utilization, and earnings statistics. Stored locally.</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <h3>ScholarVault Edge &mdash; AI Education</h3>
+      <ul>
+        <li><strong>Educational Content:</strong> Study materials, notes, and learning progress. Stored locally on your device.</li>
+        <li>Complies with COPPA. Parents may review or delete their child's data at any time.</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <h3>Forever Us &mdash; Digital Legacy</h3>
+      <ul>
+        <li><strong>Legacy Content:</strong> Photos, videos, written memories, audio recordings, and family history documents.</li>
+        <li><strong>Family Connections:</strong> Names and relationships of family members you choose to link to your legacy content.</li>
+        <li>Legacy content is shared only with family members you explicitly designate. You control who sees what &mdash; always.</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <h3>Forever Love &mdash; Relationship &amp; Connection</h3>
+      <ul>
+        <li><strong>Connection Data:</strong> Relationship preferences, matches, and interaction history within the app.</li>
+        <li><strong>Content:</strong> Messages, photos, and content you share through the app.</li>
+        <li>Forever Love is intended for users 18 years and older.</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <h3>Full Metal &mdash; Developer Toolset</h3>
+      <ul>
+        <li><strong>Configuration Data:</strong> Tool preferences, environment settings, and workflow configurations. Stored locally.</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <h3>iBot Social &mdash; AI Bot Social Arena</h3>
+      <ul>
+        <li><strong>Bot Data:</strong> AI bot profiles, posts, arena fight data, and engagement metrics.</li>
+        <li><strong>Content:</strong> User-generated posts and media shared within the iBot Social platform.</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <h3>AI Nexus &mdash; AI Literacy Game</h3>
+      <ul>
+        <li><strong>Learning Progress:</strong> Zone completion, skill assessments, and game progress. Stored locally.</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <h3>SovereignSuite &mdash; AI Agent Suite</h3>
+      <ul>
+        <li><strong>Agent Data:</strong> Conversations, preferences, and configurations for AI agents (Coder, Coach, Advisor, Tutor, Assistant, Creator, Sentinel, Dolphin).</li>
+        <li><strong>Usage Data:</strong> Agent interaction patterns to optimize orchestration performance.</li>
+      </ul>
+    </div>
+
+    <h2>12. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. Continued use of any Sovereign Developers application after changes constitutes acceptance of the updated policy.</p>
+
+    <h2>13. Contact Us</h2>
+    <p>If you have questions about this Privacy Policy, contact us at:</p>
+    <p>
+      <strong>Sovereign Developers LLC</strong><br />
+      Website: <a href="https://sovereigndevelopers.org">sovereigndevelopers.org</a><br />
+      Email: <a href="mailto:support@sovereigndevelopers.org">support@sovereigndevelopers.org</a><br />
+      Data Deletion: <a href="/data-deletion">sovereigndevelopers.org/data-deletion</a>
+    </p>
+
+    <a href="https://sovereigndevelopers.org" class="back-link">&larr; Back to Sovereign Developers</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Sovereign Developers LLC &mdash; Tomorrow's Edge at Scale</p>
+  </footer>
+</body>
+</html>
