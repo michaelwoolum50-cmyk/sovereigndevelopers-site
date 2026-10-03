@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>More by DiGiTalSoul — Sovereign Developers</title>
+  <meta name="description" content="More by DiGiTalSoul — every app from Sovereign Developers. Live on Google Play now, and what's coming next." />
+  <meta name="theme-color" content="#020818" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan: #00d4ff;
+      --dark: #020818;
+      --dark2: #040f24;
+      --card: #0a1f3a;
+      --card-border: #0d2847;
+      --text: #e0eaff;
+      --text-dim: #7a9cc0;
+      --gold: #f5c842;
+      --green: #00ff88;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(2,8,24,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,212,255,0.1);
+    }
+
+    .nav-logo {
+      font-family: 'Orbitron', monospace;
+      font-size: 1rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      padding: 8px 20px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      text-transform: uppercase;
+    }
+    .nav-cta:hover { background: var(--cyan); color: var(--dark); }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 140px 48px 80px;
+      width: 100%;
+      flex: 1;
+    }
+
+    .page-label {
+      font-size: 0.7rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .page-title {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .page-title .brand { color: var(--cyan); }
+
+    .page-desc {
+      color: var(--text-dim);
+      font-size: 1rem;
+      line-height: 1.7;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 64px;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .app-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: var(--text);
+    }
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--cyan);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    a.app-card:hover { border-color: rgba(0,212,255,0.35); transform: translateY(-4px); }
+    a.app-card:hover::before { transform: scaleX(1); }
+    .app-card.coming-soon { opacity: 0.65; }
+    .app-card.coming-soon:hover { opacity: 0.85; }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 1px solid rgba(0,212,255,0.15);
+    }
+
+    .app-name {
+      font-family: 'Orbitron', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 12px;
+    }
+
+    .app-desc {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .app-status {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border: 1px solid;
+      font-family: 'Orbitron', monospace;
+    }
+    .status-live { color: var(--green); border-color: var(--green); }
+    .status-soon { color: var(--gold); border-color: var(--gold); }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 48px;
+      border-top: 1px solid rgba(0,212,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-logo { font-family: 'Orbitron', monospace; font-size: 0.9rem; font-weight: 900; color: var(--cyan); letter-spacing: 3px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--cyan); }
+    .footer-copy { color: var(--text-dim); font-size: 0.75rem; letter-spacing: 1px; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      main { padding: 120px 24px 60px; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Sovereign Developers</a>
+    <a href="../index.html" class="nav-cta">Home</a>
+  </nav>
+
+  <main>
+    <p class="page-label">The Full Catalog</p>
+    <h1 class="page-title">More by <span class="brand">DiGiTalSoul</span></h1>
+    <p class="page-desc">Every app from Sovereign Developers — live on Google Play now, and what's coming next. New drops land here first.</p>
+
+    <div class="apps-grid">
+
+      <a href="https://play.google.com/store/apps/details?id=com.michael.neapolitanmastifflog" target="_blank" rel="noopener" class="app-card">
+        <img class="app-icon" src="icons/com.michael.neapolitanmastifflog.png" alt="NeapolitanMastiffLog: Neo Book icon" />
+        <div class="app-name">NeapolitanMastiffLog: Neo Book</div>
+        <div class="app-desc">Neapolitan Mastiff owner's book: wrinkle care, guard logs &amp; Italian lineage.</div>
+        <span class="app-status status-live">Get it on Google Play</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.base69d970d81cb16a6eee03a20b.app" target="_blank" rel="noopener" class="app-card">
+        <img class="app-icon" src="icons/com.base69d970d81cb16a6eee03a20b.app.png" alt="Forever Us icon" />
+        <div class="app-name">Forever Us</div>
+        <div class="app-desc">Stay forever — the app that keeps what matters closest.</div>
+        <span class="app-status status-live">Get it on Google Play</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.base6a384b9ac7b1ba94bfbdcbb6.app" target="_blank" rel="noopener" class="app-card">
+        <img class="app-icon" src="icons/com.base6a384b9ac7b1ba94bfbdcbb6.app.png" alt="Forever Love icon" />
+        <div class="app-name">Forever Love</div>
+        <div class="app-desc">Love, kept alive — for the one you'll never let go of.</div>
+        <span class="app-status status-live">Get it on Google Play</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.base6a3847cdee913619bc6ef664.app" target="_blank" rel="noopener" class="app-card">
+        <img class="app-icon" src="icons/com.base6a3847cdee913619bc6ef664.app.png" alt="Full Metal icon" />
+        <div class="app-name">Full Metal</div>
+        <div class="app-desc">Full metal focus — tools that hit hard and don't quit.</div>
+        <span class="app-status status-live">Get it on Google Play</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.base6a59d59444b17116ea62ae4b.app" target="_blank" rel="noopener" class="app-card">
+        <img class="app-icon" src="icons/com.base6a59d59444b17116ea62ae4b.app.png" alt="Echo icon" />
+        <div class="app-name">Echo</div>
+        <div class="app-desc">Your voice, echoed back — thoughts, notes, and everything between.</div>
+        <span class="app-status status-live">Get it on Google Play</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.base6a5a99c2466cf344cccae3f9.app" target="_blank" rel="noopener" class="app-card">
+        <img class="app-icon" src="icons/com.base6a5a99c2466cf344cccae3f9.app.png" alt="MultiMind icon" />
+        <div class="app-name">MultiMind</div>
+        <div class="app-desc">Many minds, one app — AI assistance across every part of your day.</div>
+        <span class="app-status status-live">Get it on Google Play</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.base6a789b4ac20fd930313d1ddb.app" target="_blank" rel="noopener" class="app-card">
+        <img class="app-icon" src="icons/com.base6a789b4ac20fd930313d1ddb.app.png" alt="Secure Match icon" />
+        <div class="app-name">Secure Match</div>
+        <div class="app-desc">Matches that keep your business your business.</div>
+        <span class="app-status status-live">Get it on Google Play</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.base6a110c4a0e2c0b52f6e01e32.app" target="_blank" rel="noopener" class="app-card">
+        <img class="app-icon" src="icons/com.base6a110c4a0e2c0b52f6e01e32.app.png" alt="iBot icon" />
+        <div class="app-name">iBot: AI Social Network</div>
+        <div class="app-desc">The social network where humans and AI post side by side.</div>
+        <span class="app-status status-live">Get it on Google Play</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.michael.greatswisslog" target="_blank" rel="noopener" class="app-card">
+        <img class="app-icon" src="icons/com.michael.greatswisslog.png" alt="GreatSwissLog icon" />
+        <div class="app-name">GreatSwissLog: Swiss Dog Book</div>
+        <div class="app-desc">Greater Swiss Mountain Dog owner's book: training, health &amp; alpine lineage.</div>
+        <span class="app-status status-live">Get it on Google Play</span>
+      </a>
+
+      <div class="app-card coming-soon">
+        <img class="app-icon" src="icons/com.sovereigndev.lastcall.png" alt="Last Call icon" />
+        <div class="app-name">Last Call</div>
+        <div class="app-desc">Someone you love is leaving town — plan the goodbye like it matters.</div>
+        <span class="app-status status-soon">Coming Soon</span>
+      </div>
+
+      <div class="app-card coming-soon">
+        <img class="app-icon" src="icons/com.sovereigndev.desiremap.png" alt="Desire Map icon" />
+        <div class="app-name">Desire Map</div>
+        <div class="app-desc">Map your desires: collect them, evolve them, achieve them.</div>
+        <span class="app-status status-soon">Coming Soon</span>
+      </div>
+
+      <div class="app-card coming-soon">
+        <img class="app-icon" src="icons/com.sovereigndev.nightreel.png" alt="Night Reel icon" />
+        <div class="app-name">Night Reel</div>
+        <div class="app-desc">What to watch at 2am.</div>
+        <span class="app-status status-soon">Coming Soon</span>
+      </div>
+
+      <div class="app-card coming-soon">
+        <img class="app-icon" src="icons/com.codeassembly.app.png" alt="Code Assembly icon" />
+        <div class="app-name">Code Assembly</div>
+        <div class="app-desc">Track coding projects step-by-step: curriculum, help desk, tips — all on-device.</div>
+        <span class="app-status status-soon">Coming Soon</span>
+      </div>
+
+      <div class="app-card coming-soon">
+        <img class="app-icon" src="icons/com.sovereigndev.medcabinet.png" alt="MedCabinet icon" />
+        <div class="app-name">MedCabinet</div>
+        <div class="app-desc">Family medicine cabinet: every member's meds, doses &amp; refills in one app.</div>
+        <span class="app-status status-soon">Coming Soon</span>
+      </div>
+
+      <div class="app-card coming-soon">
+        <img class="app-icon" src="icons/com.sovereigndevelopers.aci.png" alt="ACI Trainer icon" />
+        <div class="app-name">ACI Trainer: Train Your AI</div>
+        <div class="app-desc">Train your own AI assistant through structured study paths, drills, and exams.</div>
+        <span class="app-status status-soon">Coming Soon</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">SOVEREIGN DEVELOPERS</div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="https://sovereigndevelopers.org/privacy-policy">Privacy &amp; Policies</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Sovereign Developers — Tomorrow's Edge at Scale</p>
+  </footer>
+
+</body>
+</html>
