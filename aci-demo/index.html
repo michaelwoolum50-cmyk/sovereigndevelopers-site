@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACI University Harness - Interactive Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>ACI University Benchmarking Harness</h1>
+      <p>Interactive Simulation Demo - 12 Gold Tier Ivy League Disciplines (Years 1 to 12)</p>
+    </header>
+
+    <div id="setup-panel" class="panel">
+      <h2>1. Configure Candidate (LLM)</h2>
+      <label>LLM Provider:
+        <select id="provider" disabled>
+          <option value="gemini">Google Gemini (Simulated)</option>
+        </select>
+      </label>
+      <label>API Key:
+        <input type="password" id="api-key" value="************************" disabled>
+      </label>
+      <label>Model Name:
+        <input type="text" id="model-name" value="gemini-1.5-flash" disabled>
+      </label>
+      <hr>
+      <h2>2. Select Academic Track & Degree Level</h2>
+      <label>Collegiate Discipline:
+        <select id="major-select">
+          <option value="Law">Law (Blackstone, Supreme Court Precedent, Evidence)</option>
+          <option value="Medicine">Medicine (Anatomy, Clinical Pathology, Sepsis Protocols)</option>
+          <option value="Computer Science">Computer Science (SICP, Distributed Systems, Turing Limits)</option>
+          <option value="Economics & Finance">Economics & Finance (Wealth of Nations, CAPM, 5-Factor Asset Pricing)</option>
+          <option value="Constitutional Law & Governance">Constitutional Law & Governance (Federalist Papers, APA, Antitrust)</option>
+          <option value="Biology & Life Sciences">Biology & Life Sciences (Origin of Species, Central Dogma, CRISPR)</option>
+          <option value="Physics & Physical Sciences">Physics & Physical Sciences (Relativity, Schrödinger Wave, Dirac Antimatter)</option>
+          <option value="Commerce & Consumer Behavior">Commerce & Consumer Behavior (Leisure Class, Porter Strategy, Prospect Theory)</option>
+          <option value="Political Philosophy & Public Policy">Political Philosophy & Public Policy (Republic, Realism, Rawls Justice)</option>
+          <option value="Professional Ethics & Decision Science">Professional Ethics & Decision Science (Nicomachean Ethics, Belmont Report, SOX)</option>
+          <option value="Clinical Care & Healthcare Systems">Clinical Care & Healthcare Systems (Nightingale, Donabedian Triad, HIPAA)</option>
+          <option value="Systems Architecture & Computing Machinery">Systems Architecture & Computing Machinery (Babbage, Von Neumann, MESI Coherence)</option>
+        </select>
+      </label>
+      <label>Degree Phase:
+        <select id="phase-select">
+          <option value="core">Full 8-Year Professional Track (Years 1–8: Bachelor's + J.D. / M.D. / Master's) [$49.99]</option>
+          <option value="phase_1">Phase 1: Undergraduate Foundation (Years 1–4: Bachelor's Degree)</option>
+          <option value="phase_2">Phase 2: Professional Graduate School (Years 5–8: J.D. / M.D. / Master's)</option>
+          <option value="phase_3">Phase 3: Doctoral & Board Specialization (Years 8–12: Ph.D. / Board Fellow) [+$19.99 Add-on]</option>
+        </select>
+      </label>
+      <button id="start-btn">Run Simulated Benchmark</button>
+      
+      <div style="margin-top: 2rem; padding: 1.5rem; background: #0f172a; border: 1px dashed var(--gold); border-radius: 8px; text-align: center;">
+        <h3 style="margin-top: 0; color: var(--gold);">Get The Full Desktop App</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Benchmark your own AI models against 12 exhaustive collegiate tracks. 100% private, BYOK, no subscriptions.</p>
+        <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1rem;">
+          <strong style="color: #fff;">Years 1–8 Professional Core (Bachelor's + Master's / J.D. / M.D.):</strong> $49.99<br>
+          <strong style="color: #fff;">Years 8–12 Doctoral / Board Specialist Fellowship:</strong> $19.99 Add-on
+        </p>
+        <button style="background: var(--gold); color: #000; font-weight: bold; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer;" onclick="alert('Redirects to Whop / Stripe Checkout ($49.99 Core)')">Buy 8-Year Core ($49.99) - Instant Download</button>
+      </div>
+    </div>
+
+    <div id="run-panel" class="panel hidden">
+      <h2>Simulation in Progress</h2>
+      <div id="status-bar">
+        <div id="progress-fill"></div>
+      </div>
+      <p id="status-text">Initializing...</p>
+      
+      <div id="log-container"></div>
+      <div class="actions">
+        <button id="cancel-btn">Cancel Simulation</button>
+      </div>
+    </div>
+
+    <div id="cert-panel" class="panel hidden">
+      <div id="certificate" class="certificate">
+        <h1 id="cert-title">Certificate of Course Completion</h1>
+        <p>This certifies that the Artificial Intelligence model known as</p>
+        <h2 id="cert-model">gemini-1.5-flash</h2>
+        <p>has successfully completed the rigorous Gold Tier collegiate track in</p>
+        <h3 id="cert-major">Major Name</h3>
+        <p style="margin: 0.5rem 0; font-weight: 600; color: var(--gold);" id="cert-degree">Degree Level</p>
+        <p>Final Score: <strong id="cert-score">92%</strong></p>
+        <div class="seal">GOLD TIER<br>VERIFIED</div>
+        <p style="font-size: 0.6rem; color: #64748b; margin-top: 2rem;">Disclaimer: This certificate verifies internal benchmark completion. It does not represent state accreditation, legal certification, or official licensing. Provided AS-IS with no guarantees.</p>
+      </div>
+      <div class="actions" style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+        <button style="background: var(--gold); color: #000; font-weight: bold; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer;" onclick="alert('Redirects to Whop / Stripe Checkout ($49.99 Core)')">Purchase Full Desktop App ($49.99)</button>
+        <button id="reset-btn" style="background: transparent; border: 1px solid var(--border); color: #fff; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">Run Simulation Again</button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
