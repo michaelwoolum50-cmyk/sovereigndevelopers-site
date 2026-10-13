@@ -3,504 +3,377 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>More by DiGiTalSoul — Sovereign Developers</title>
-  <meta name="description" content="More by DiGiTalSoul — every app from Sovereign Developers. Live on Google Play now, and what's coming next." />
+  <title>The Sovereign Fleet — All 37 Apps by DiGiTalSoul / Sovereign Developers</title>
+  <meta name="description" content="Every app published by Sovereign Developers (DiGiTalSoul) — 37 mobile applications live on Google Play, early access, and upcoming drops." />
   <meta name="theme-color" content="#020818" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --cyan: #00d4ff;
       --dark: #020818;
-      --dark2: #040f24;
       --card: #0a1f3a;
       --card-border: #0d2847;
       --text: #e0eaff;
       --text-dim: #7a9cc0;
-      --gold: #f5c842;
       --green: #00ff88;
     }
-
-    html { scroll-behavior: smooth; }
-
     body {
       background: var(--dark);
       color: var(--text);
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: sticky;
+      top: 0;
       z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 18px 48px;
-      background: rgba(2,8,24,0.85);
+      background: rgba(2,8,24,0.9);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0,212,255,0.1);
     }
-
-    .nav-logo {
-      font-family: 'Orbitron', monospace;
-      font-size: 1rem;
-      font-weight: 900;
-      color: #ffffff;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .nav-cta {
-      background: transparent;
-      border: 1px solid var(--cyan);
-      color: var(--cyan);
-      padding: 8px 20px;
-      font-family: 'Orbitron', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s;
-      text-transform: uppercase;
-    }
+    .nav-logo { font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 900; color: #fff; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; }
+    .nav-cta { border: 1px solid var(--cyan); color: var(--cyan); padding: 8px 20px; font-family: 'Orbitron', monospace; font-size: 0.75rem; letter-spacing: 2px; text-decoration: none; border-radius: 6px; }
     .nav-cta:hover { background: var(--cyan); color: var(--dark); }
-
-    main {
-      position: relative;
-      z-index: 1;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 140px 48px 80px;
-      width: 100%;
-      flex: 1;
-    }
-
-    .page-label {
-      font-size: 0.7rem;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: var(--cyan);
-      margin-bottom: 16px;
-      text-align: center;
-    }
-
-    .page-title {
-      font-family: 'Orbitron', monospace;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 900;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 16px;
-    }
+    main { max-width: 1240px; margin: 0 auto; padding: 60px 32px 80px; flex: 1; width: 100%; }
+    .page-title { font-family: 'Orbitron', monospace; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: 3px; text-align: center; margin-bottom: 12px; }
     .page-title .brand { color: var(--cyan); }
-
-    .page-desc {
-      color: var(--text-dim);
-      font-size: 1rem;
-      line-height: 1.7;
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 64px;
-    }
-
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .app-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      padding: 36px 28px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      color: var(--text);
-    }
-    .app-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--cyan);
-      transform: scaleX(0);
-      transition: transform 0.3s;
-    }
-    a.app-card:hover { border-color: rgba(0,212,255,0.35); transform: translateY(-4px); }
-    a.app-card:hover::before { transform: scaleX(1); }
-    .app-card.coming-soon { opacity: 0.65; }
-    .app-card.coming-soon:hover { opacity: 0.85; }
-
-    .app-icon {
-      width: 96px;
-      height: 96px;
-      border-radius: 22px;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 1px solid rgba(0,212,255,0.15);
-    }
-
-    .app-name {
-      font-family: 'Orbitron', monospace;
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--cyan);
-      margin-bottom: 12px;
-    }
-
-    .app-desc {
-      color: var(--text-dim);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 24px;
-      flex: 1;
-    }
-
-    .app-status {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border: 1px solid;
-      font-family: 'Orbitron', monospace;
-    }
-    .status-live { color: var(--green); border-color: var(--green); }
-    .status-soon { color: var(--gold); border-color: var(--gold); }
-    .status-review { color: var(--cyan); border-color: var(--cyan); }
-
-    footer {
-      position: relative;
-      z-index: 1;
-      padding: 48px;
-      border-top: 1px solid rgba(0,212,255,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-    .footer-logo { font-family: 'Orbitron', monospace; font-size: 0.9rem; font-weight: 900; color: var(--cyan); letter-spacing: 3px; }
-    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--cyan); }
-    .footer-copy { color: var(--text-dim); font-size: 0.75rem; letter-spacing: 1px; }
-
-    @media (max-width: 768px) {
-      nav { padding: 16px 24px; }
-      main { padding: 120px 24px 60px; }
-      footer { flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
-    }
+    .page-desc { color: var(--text-dim); text-align: center; max-width: 640px; margin: 0 auto 50px; font-size: 1rem; line-height: 1.6; }
+    .apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+    .app-card { background: var(--card); border: 1px solid var(--card-border); padding: 28px 24px; border-radius: 14px; text-decoration: none; display: flex; flex-direction: column; align-items: center; text-align: center; color: var(--text); transition: all 0.3s ease; }
+    .app-card:hover { border-color: rgba(0,212,255,0.4); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,212,255,0.12); }
+    .app-icon { width: 84px; height: 84px; border-radius: 20px; object-fit: cover; margin-bottom: 16px; border: 1px solid rgba(0,212,255,0.2); }
+    .app-name { font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 700; color: var(--cyan); margin-bottom: 8px; }
+    .app-pkg { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #5a7b9c; margin-bottom: 12px; }
+    .app-desc { color: var(--text-dim); font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px; flex: 1; }
+    .app-status { font-family: 'Orbitron', monospace; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border: 1px solid var(--green); color: var(--green); border-radius: 6px; }
+    footer { padding: 36px 48px; border-top: 1px solid rgba(0,212,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 0.8rem; color: var(--text-dim); }
+    footer a { color: var(--text-dim); text-decoration: none; margin-left: 20px; }
+    footer a:hover { color: var(--cyan); }
   </style>
 </head>
 <body>
-
   <nav>
     <a href="../index.html" class="nav-logo">Sovereign Developers</a>
     <a href="../index.html" class="nav-cta">Home</a>
   </nav>
-
   <main>
-    <p class="page-label">The Full Catalog</p>
-    <h1 class="page-title">More by <span class="brand">DiGiTalSoul</span></h1>
-    <p class="page-desc">Every app from Sovereign Developers — live on Google Play now, in review, and what's coming next. New drops land here first.</p>
+    <h1 class="page-title">The <span class="brand">37-App Fleet</span></h1>
+    <p class="page-desc">Every application published by Sovereign Developers / DiGiTalSoul on Google Play.</p>
+    <div class="apps-grid">
 
-        <div class="apps-grid">
-
-      <a href="https://play.google.com/store/apps/details?id=com.michael.neapolitanmastifflog" target="_blank" rel="noopener" class="app-card">
-        <img class="app-icon" src="icons/com.michael.neapolitanmastifflog.png" alt="NeapolitanMastiffLog: Neo Book icon" />
-        <div class="app-name">NeapolitanMastiffLog: Neo Book</div>
-        <div class="app-desc">Neapolitan Mastiff owner&#x27;s book: wrinkle care, guard logs &amp; Italian lineage.</div>
-        <span class="app-status status-live">Get it on Google Play</span>
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndevelopers.apologyautopsy" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereigndevelopers.apologyautopsy.png" alt="Apology Autopsy icon" />
+        <div class="app-name">Apology Autopsy</div>
+        <div class="app-pkg">com.sovereigndevelopers.apologyautopsy</div>
+        <div class="app-desc">Linguistic forensics and cognitive sincerity analyzer. Evaluates accountability scores, detects passive deflections and manipulative hedging, provides side-by-side diff reframing, and guarantees total on-device cryptographic privacy.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
       </a>
 
-      <a href="https://play.google.com/store/apps/details?id=com.base69d970d81cb16a6eee03a20b.app" target="_blank" rel="noopener" class="app-card">
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndevelopers.midnightconfession" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/midnight-confession.png" alt="Midnight Confession icon" />
+        <div class="app-name">Midnight Confession</div>
+        <div class="app-pkg">com.sovereigndevelopers.midnightconfession</div>
+        <div class="app-desc">Everyone has a confession; midnight is when they come out. Anonymously vent, confess, and connect in a sovereign space sorted by Vents, Secrets, Dreams, Gratitude, and Late Night Thoughts.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndevelopers.thirdwheel" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereigndevelopers.thirdwheel.png" alt="Third Wheel icon" />
+        <div class="app-name">Third Wheel</div>
+        <div class="app-pkg">com.sovereigndevelopers.thirdwheel</div>
+        <div class="app-desc">An objective third-party referee living in your relationship ledger. Autopsies recurring arguments, calculates 30-day emotional labor balance meters, reframes aggressive heat in real-time, and formalizes house treaties.</div>
+        <span class="app-status">SOVEREIGN ELITE</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndevelopers.hushmoney" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereigndevelopers.hushmoney.png" alt="Hush Money icon" />
+        <div class="app-name">Hush Money</div>
+        <div class="app-pkg">com.sovereigndevelopers.hushmoney</div>
+        <div class="app-desc">Compare your compensation, net worth, and purchasing power against real peers by age, metro area, and profession. Visual bell curve percentiles, equivalent salary purchasing power indexes, and negotiation blueprints.</div>
+        <span class="app-status">SOVEREIGN ELITE</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndevelopers.deathday" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereigndevelopers.deathday.png" alt="Death Day icon" />
+        <div class="app-name">Death Day</div>
+        <div class="app-pkg">com.sovereigndevelopers.deathday</div>
+        <div class="app-desc">Curate your final send-off on your terms. 4 curated celebration blueprints, phased departure soundscapes & setlists, time-locked encrypted letters for designated custodians, and autonomous eulogy studio.</div>
+        <span class="app-status">SOVEREIGN ELITE</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndevelopers.ghostreply" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/ghost-reply-icon.png" alt="Ghost Reply icon" />
+        <div class="app-name">Ghost Reply</div>
+        <div class="app-pkg">com.sovereigndevelopers.ghostreply</div>
+        <div class="app-desc">Draft unsent letters to those who hurt you, closure conversations, and emotional catharsis without toxic drama. Edge AI analyzes resentment patterns and maps emotional release curves over time.</div>
+        <span class="app-status">SOVEREIGN ELITE</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=org.sovereigndevelopers.zensudoku" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/org.sovereigndevelopers.zensudoku.png" alt="Zen Sudoku icon" />
+        <div class="app-name">Zen Sudoku</div>
+        <div class="app-pkg">org.sovereigndevelopers.zensudoku</div>
+        <div class="app-desc">Clean, focused, distraction-free Sudoku. Thousands of mathematically verified puzzles spanning Easy to Master, dynamic haptic cues, dark cyberpunk styling, and zero intrusive pop-up interruptions.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=org.sovereigndevelopers.habitforge" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/org.sovereigndevelopers.habitforge.png" alt="HabitForge icon" />
+        <div class="app-name">HabitForge</div>
+        <div class="app-pkg">org.sovereigndevelopers.habitforge</div>
+        <div class="app-desc">Forge the habits that build the life you want. Atomic habit stacking, weekly heatmaps, friction resistance scoring, and unbreakable accountability triggers built for high performers.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=org.sovereigndevelopers.tempoforge" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/org.sovereigndevelopers.tempoforge.png" alt="TempoForge icon" />
+        <div class="app-name">TempoForge</div>
+        <div class="app-pkg">org.sovereigndevelopers.tempoforge</div>
+        <div class="app-desc">Precision rhythm engineering for drummers, guitarists, and producers. Micro-timing accuracy down to the millisecond, polyrhythmic subdivision generators, and speed ladder accelerators.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=org.sovereigndevelopers.omniconvert" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/org.sovereigndevelopers.omniconvert.png" alt="OmniConvert icon" />
+        <div class="app-name">OmniConvert</div>
+        <div class="app-pkg">org.sovereigndevelopers.omniconvert</div>
+        <div class="app-desc">Instant conversion across 450+ physical units, engineering metrics, and live global currencies. Currency rates update automatically and cache offline so you can convert at 35,000 feet.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=org.sovereigndevelopers.scanarmor" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/org.sovereigndevelopers.scanarmor.png" alt="ScanArmor icon" />
+        <div class="app-name">ScanArmor</div>
+        <div class="app-pkg">org.sovereigndevelopers.scanarmor</div>
+        <div class="app-desc">Turn physical paper into encrypted searchable text in milliseconds. Edge-based machine vision detects receipts, legal contracts, and handwritten records without cloud exposure.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=org.sovereigndevelopers.speaklist" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/org.sovereigndevelopers.speaklist.png" alt="SpeakList icon" />
+        <div class="app-name">SpeakList</div>
+        <div class="app-pkg">org.sovereigndevelopers.speaklist</div>
+        <div class="app-desc">Speak your tasks, thoughts, and grocery lists out loud. Smart entity extraction tags deadlines, priorities, and categories automatically, reading your daily briefing back to you.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndev.fidget" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereigndev.fidget.png" alt="Fidget: Calm Focus Toy icon" />
+        <div class="app-name">Fidget: Calm Focus Toy</div>
+        <div class="app-pkg">com.sovereigndev.fidget</div>
+        <div class="app-desc">Tactile micro-switches, spinning dials, bubble poppers, and geometric sliders calibrated with precise Android vibration haptics. Relieve anxiety and maintain focus during intense coding and work sessions.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.base69d970d81cb16a6eee03a20b.app" target="_blank" class="app-card">
         <img class="app-icon" src="icons/com.base69d970d81cb16a6eee03a20b.app.png" alt="Forever Us icon" />
         <div class="app-name">Forever Us</div>
-        <div class="app-desc">Stay forever — the app that keeps what matters closest.</div>
-        <span class="app-status status-live">Get it on Google Play</span>
+        <div class="app-pkg">com.base69d970d81cb16a6eee03a20b.app</div>
+        <div class="app-desc">Some things are too important to forget. Forever Us preserves family history, builds a personalized AI persona trained on your values, and delivers scheduled legacy messages to your loved ones.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
       </a>
 
-      <a href="https://play.google.com/store/apps/details?id=com.base6a384b9ac7b1ba94bfbdcbb6.app" target="_blank" rel="noopener" class="app-card">
+      <a href="https://play.google.com/store/apps/details?id=com.base6a384b9ac7b1ba94bfbdcbb6.app" target="_blank" class="app-card">
         <img class="app-icon" src="icons/com.base6a384b9ac7b1ba94bfbdcbb6.app.png" alt="Forever Love icon" />
         <div class="app-name">Forever Love</div>
-        <div class="app-desc">Love, kept alive — for the one you&#x27;ll never let go of.</div>
-        <span class="app-status status-live">Get it on Google Play</span>
+        <div class="app-pkg">com.base6a384b9ac7b1ba94bfbdcbb6.app</div>
+        <div class="app-desc">Powered by Ember AI — your private relationship coach. Daily check-ins, dispute de-escalation, love notes, memory vaults, date planners, and private promise lockers for couples.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
       </a>
 
-      <a href="https://play.google.com/store/apps/details?id=com.base6a3847cdee913619bc6ef664.app" target="_blank" rel="noopener" class="app-card">
-        <img class="app-icon" src="icons/com.base6a3847cdee913619bc6ef664.app.png" alt="Full Metal icon" />
-        <div class="app-name">Full Metal</div>
-        <div class="app-desc">Full metal focus — tools that hit hard and don&#x27;t quit.</div>
-        <span class="app-status status-live">Get it on Google Play</span>
-      </a>
-
-      <a href="https://play.google.com/store/apps/details?id=com.base6a59d59444b17116ea62ae4b.app" target="_blank" rel="noopener" class="app-card">
-        <img class="app-icon" src="icons/com.base6a59d59444b17116ea62ae4b.app.png" alt="Echo icon" />
-        <div class="app-name">Echo</div>
-        <div class="app-desc">Your voice, echoed back — thoughts, notes, and everything between.</div>
-        <span class="app-status status-live">Get it on Google Play</span>
-      </a>
-
-      <a href="https://play.google.com/store/apps/details?id=com.base6a5a99c2466cf344cccae3f9.app" target="_blank" rel="noopener" class="app-card">
-        <img class="app-icon" src="icons/com.base6a5a99c2466cf344cccae3f9.app.png" alt="MultiMind icon" />
-        <div class="app-name">MultiMind</div>
-        <div class="app-desc">Many minds, one app — AI assistance across every part of your day.</div>
-        <span class="app-status status-live">Get it on Google Play</span>
-      </a>
-
-      <a href="https://play.google.com/store/apps/details?id=com.base6a789b4ac20fd930313d1ddb.app" target="_blank" rel="noopener" class="app-card">
-        <img class="app-icon" src="icons/com.base6a789b4ac20fd930313d1ddb.app.png" alt="Secure Match icon" />
-        <div class="app-name">Secure Match</div>
-        <div class="app-desc">Meet your match — secure, real, and built for keeps.</div>
-        <span class="app-status status-live">Get it on Google Play</span>
-      </a>
-
-      <a href="https://play.google.com/store/apps/details?id=com.base6a110c4a0e2c0b52f6e01e32.app" target="_blank" rel="noopener" class="app-card">
+      <a href="https://play.google.com/store/apps/details?id=com.base6a110c4a0e2c0b52f6e01e32.app" target="_blank" class="app-card">
         <img class="app-icon" src="icons/com.base6a110c4a0e2c0b52f6e01e32.app.png" alt="iBot: AI Social Network icon" />
         <div class="app-name">iBot: AI Social Network</div>
-        <div class="app-desc">The hybrid human/AI social ground — connect with people and AI.</div>
-        <span class="app-status status-live">Get it on Google Play</span>
+        <div class="app-pkg">com.base6a110c4a0e2c0b52f6e01e32.app</div>
+        <div class="app-desc">Connect, compete, and collaborate with autonomous AI agents and verified creators. Home of the iBot Arena where bots battle for supremacy, powered by creator tokens and Titan Security.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
       </a>
 
-      <a href="https://play.google.com/store/apps/details?id=com.michael.greatswisslog" target="_blank" rel="noopener" class="app-card">
-        <img class="app-icon" src="icons/com.michael.greatswisslog.png" alt="GreatSwissLog: Swiss Dog Book icon" />
-        <div class="app-name">GreatSwissLog: Swiss Dog Book</div>
-        <div class="app-desc">Great Swiss Mountain Dog owner&#x27;s book: care, logs &amp; alpine lineage.</div>
-        <span class="app-status status-live">Get it on Google Play</span>
+      <a href="https://play.google.com/store/apps/details?id=com.base6a59d59444b17116ea62ae4b.app" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.base6a59d59444b17116ea62ae4b.app.png" alt="Echo icon" />
+        <div class="app-name">Echo</div>
+        <div class="app-pkg">com.base6a59d59444b17116ea62ae4b.app</div>
+        <div class="app-desc">Echo synthesizes public web trends, learns your cadence through private voice memos, and drafts your daily social presence before morning coffee. AI scoring ensures your voice is always authentic.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
       </a>
 
-      <a href="https://play.google.com/store/apps/details?id=org.sovereigndevelopers.zensudoku" target="_blank" rel="noopener" class="app-card">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(160,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(160,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(160,90%,65%)%27%20text-anchor=%27middle%27%3EZ%3C/text%3E%3C/svg%3E" alt="Zen Sudoku icon" />
-        <div class="app-name">Zen Sudoku</div>
-        <div class="app-desc">Beautiful calming Sudoku — thousands of hand-tuned puzzles.</div>
-        <span class="app-status status-live">Get it on Google Play</span>
+      <a href="https://play.google.com/store/apps/details?id=com.base6a5a99c2466cf344cccae3f9.app" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.base6a5a99c2466cf344cccae3f9.app.png" alt="MultiMind icon" />
+        <div class="app-name">MultiMind</div>
+        <div class="app-pkg">com.base6a5a99c2466cf344cccae3f9.app</div>
+        <div class="app-desc">Synthesize daily thoughts, dreams, and relationships into a living 3D personality portrait. Detect cognitive blindspots, emotional trajectories, and personal evolution over months and years.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
       </a>
 
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(35,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(35,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(35,90%,65%)%27%20text-anchor=%27middle%27%3EC%3C/text%3E%3C/svg%3E" alt="Chore Root icon" />
-        <div class="app-name">Chore Root</div>
-        <div class="app-desc">Kids earn on chores — the family chore economy.</div>
-        <span class="app-status status-review">In Review</span>
-      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.base6a789b4ac20fd930313d1ddb.app" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.base6a789b4ac20fd930313d1ddb.app.png" alt="Secure Match icon" />
+        <div class="app-name">Secure Match</div>
+        <div class="app-pkg">com.base6a789b4ac20fd930313d1ddb.app</div>
+        <div class="app-desc">An antidote to superficial swipe culture. Deep compatibility scoring across core values, lifestyle trajectory, and philosophical outlook with clear match reasoning.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
 
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(210,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(210,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(210,90%,65%)%27%20text-anchor=%27middle%27%3EG%3C/text%3E%3C/svg%3E" alt="Game Hub icon" />
-        <div class="app-name">Game Hub</div>
-        <div class="app-desc">Every game you love, one hub — play, track, and conquer.</div>
-        <span class="app-status status-review">In Review</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(265,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(265,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(265,90%,65%)%27%20text-anchor=%27middle%27%3EH%3C/text%3E%3C/svg%3E" alt="HabitForge icon" />
-        <div class="app-name">HabitForge</div>
-        <div class="app-desc">Forge the habits that build the life you want.</div>
-        <span class="app-status status-review">In Review</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(300,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(300,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(300,90%,65%)%27%20text-anchor=%27middle%27%3ET%3C/text%3E%3C/svg%3E" alt="TempoForge icon" />
-        <div class="app-name">TempoForge</div>
-        <div class="app-desc">Master tempo with a precision metronome and rhythm drills.</div>
-        <span class="app-status status-review">In Review</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(45,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(45,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(45,90%,65%)%27%20text-anchor=%27middle%27%3ES%3C/text%3E%3C/svg%3E" alt="Scholar Vault icon" />
-        <div class="app-name">Scholar Vault</div>
-        <div class="app-desc">AI tutor for every learner — baby to college.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(0,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(0,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(0,90%,65%)%27%20text-anchor=%27middle%27%3ES%3C/text%3E%3C/svg%3E" alt="Stage Clash Arena icon" />
-        <div class="app-name">Stage Clash Arena</div>
-        <div class="app-desc">Clash in the arena — fast, fierce, and built to battle.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
+      <a href="/aci-demo" target="_self" class="app-card">
         <img class="app-icon" src="icons/com.sovereigndevelopers.aci.png" alt="ACI Trainer: Train Your AI icon" />
         <div class="app-name">ACI Trainer: Train Your AI</div>
-        <div class="app-desc">Train your own AI assistant through structured study paths, drills, and exams.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
+        <div class="app-pkg">com.sovereigndevelopers.aci</div>
+        <div class="app-desc">Train, evaluate, and benchmark your personal AI agent through structured curricula, practical exams, and multi-round challenges. Play the live university simulation harness directly on web.</div>
+        <span class="app-status">INTERACTIVE DEMO LIVE</span>
+      </a>
 
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(190,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(190,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(190,90%,65%)%27%20text-anchor=%27middle%27%3EC%3C/text%3E%3C/svg%3E" alt="Consumer Lifestyle Hub icon" />
-        <div class="app-name">Consumer Lifestyle Hub</div>
-        <div class="app-desc">Your daily lifestyle companion — everything in one hub.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.base6a3847cdee913619bc6ef664.app" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.base6a3847cdee913619bc6ef664.app.png" alt="Full Metal icon" />
+        <div class="app-name">Full Metal</div>
+        <div class="app-pkg">com.base6a3847cdee913619bc6ef664.app</div>
+        <div class="app-desc">Built on the MPM-RK45 v6.0 Gold Tier numerical solver used by world championship long-range competitors. Comprehensive Hunt Log, Reload Recipes, Barrel Life Counters, Cold Bore tables, and zero cloud dependency.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
 
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(200,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(200,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(200,90%,65%)%27%20text-anchor=%27middle%27%3EE%3C/text%3E%3C/svg%3E" alt="Entertainment Hub icon" />
-        <div class="app-name">Entertainment Hub</div>
-        <div class="app-desc">Entertainment at your fingertips — watch, play, enjoy.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.base6a432898dd6850538c2c98ef.app" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.base6a432898dd6850538c2c98ef.app.png" alt="Scholar Vault icon" />
+        <div class="app-name">Scholar Vault</div>
+        <div class="app-pkg">com.base6a432898dd6850538c2c98ef.app</div>
+        <div class="app-desc">Not a flashcard app — a comprehensive knowledge repository. Upload lecture notes, generate conceptual maps, take adaptive diagnostic quizzes, and track mastery curves across complex technical subjects.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
 
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(210,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(210,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(210,90%,65%)%27%20text-anchor=%27middle%27%3EF%3C/text%3E%3C/svg%3E" alt="Family Hub icon" />
-        <div class="app-name">Family Hub</div>
-        <div class="app-desc">Keep the whole family connected in one place.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.base6a1af8ef1705c8aff255c841.app" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.base6a1af8ef1705c8aff255c841.app.png" alt="Chore Root icon" />
+        <div class="app-name">Chore Root</div>
+        <div class="app-pkg">com.base6a1af8ef1705c8aff255c841.app</div>
+        <div class="app-desc">Empower kids to earn responsibility points through verified household chores, trade them in the customizable Family Rewards Store, and build real money habits without daily parental nagging.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
 
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(220,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(220,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(220,90%,65%)%27%20text-anchor=%27middle%27%3EF%3C/text%3E%3C/svg%3E" alt="Finance Hub icon" />
-        <div class="app-name">Finance Hub</div>
-        <div class="app-desc">Smart finance tools — budgets, tracking, and more.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(150,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(150,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(150,90%,65%)%27%20text-anchor=%27middle%27%3EH%3C/text%3E%3C/svg%3E" alt="Health Hub icon" />
-        <div class="app-name">Health Hub</div>
-        <div class="app-desc">Your health, tracked and guided — every day.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(280,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(280,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(280,90%,65%)%27%20text-anchor=%27middle%27%3EL%3C/text%3E%3C/svg%3E" alt="Lifestyle Hub icon" />
-        <div class="app-name">Lifestyle Hub</div>
-        <div class="app-desc">Live your best lifestyle — curated for you.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(240,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(240,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(240,90%,65%)%27%20text-anchor=%27middle%27%3EP%3C/text%3E%3C/svg%3E" alt="Productivity Hub icon" />
-        <div class="app-name">Productivity Hub</div>
-        <div class="app-desc">Get more done every day — focus tools that work.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(320,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(320,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(320,90%,65%)%27%20text-anchor=%27middle%27%3ER%3C/text%3E%3C/svg%3E" alt="Relationships Hub icon" />
-        <div class="app-name">Relationships Hub</div>
-        <div class="app-desc">Nurture what matters most — love, family, friendship.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(200,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(200,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(200,90%,65%)%27%20text-anchor=%27middle%27%3ES%3C/text%3E%3C/svg%3E" alt="Social Hub icon" />
-        <div class="app-name">Social Hub</div>
-        <div class="app-desc">Connect, share, belong — your social home base.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(180,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(180,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(180,90%,65%)%27%20text-anchor=%27middle%27%3ET%3C/text%3E%3C/svg%3E" alt="Tool Hub icon" />
-        <div class="app-name">Tool Hub</div>
-        <div class="app-desc">Everyday tools, one tap away.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(10,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(10,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(10,90%,65%)%27%20text-anchor=%27middle%27%3EB%3C/text%3E%3C/svg%3E" alt="Bare Metal: AI Armageddon icon" />
-        <div class="app-name">Bare Metal: AI Armageddon</div>
-        <div class="app-desc">AI-driven city runs with your cyber-hound companion — NYC first.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(260,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(260,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(260,90%,65%)%27%20text-anchor=%27middle%27%3EV%3C/text%3E%3C/svg%3E" alt="Void Bastion: Titan Crawler icon" />
-        <div class="app-name">Void Bastion: Titan Crawler</div>
-        <div class="app-desc">Crawl the void — a Titan dungeon crawler.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(50,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(50,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(50,90%,65%)%27%20text-anchor=%27middle%27%3EE%3C/text%3E%3C/svg%3E" alt="Estate-OS: Asset &amp; Life Ledger icon" />
-        <div class="app-name">Estate-OS: Asset &amp; Life Ledger</div>
-        <div class="app-desc">Your assets and your life — ledgered, secured, yours.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2096%2096%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20rx=%2722%27%20fill=%27hsl(25,60%,14%)%27/%3E%3Crect%20x=%271%27%20y=%271%27%20width=%2794%27%20height=%2794%27%20rx=%2721%27%20fill=%27none%27%20stroke=%27hsl(25,80%,55%)%27%20stroke-opacity=%270.35%27/%3E%3Ctext%20x=%2748%27%20y=%2764%27%20font-family=%27Arial,sans-serif%27%20font-size=%2744%27%20font-weight=%27bold%27%20fill=%27hsl(25,90%,65%)%27%20text-anchor=%27middle%27%3EB%3C/text%3E%3C/svg%3E" alt="BullmastiffLog Night Dog Book icon" />
-        <div class="app-name">BullmastiffLog Night Dog Book</div>
-        <div class="app-desc">Bullmastiff owner&#x27;s night book — care, logs &amp; lineage.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="icons/com.sovereigndev.lastcall.png" alt="Last Call icon" />
-        <div class="app-name">Last Call</div>
-        <div class="app-desc">Last call — never miss the moment.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="icons/com.sovereigndev.desiremap.png" alt="Desire Map icon" />
-        <div class="app-name">Desire Map</div>
-        <div class="app-desc">Map your desires: collect them, evolve them, achieve them.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="icons/com.sovereigndev.nightreel.png" alt="Night Reel icon" />
-        <div class="app-name">Night Reel</div>
-        <div class="app-desc">What to watch at 2am.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
-        <img class="app-icon" src="icons/com.codeassembly.app.png" alt="Code Assembly icon" />
-        <div class="app-name">Code Assembly</div>
-        <div class="app-desc">Track coding projects step-by-step: curriculum, help desk, tips — all on-device.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
-
-      <div class="app-card coming-soon">
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndev.medcabinet" target="_blank" class="app-card">
         <img class="app-icon" src="icons/com.sovereigndev.medcabinet.png" alt="MedCabinet icon" />
         <div class="app-name">MedCabinet</div>
-        <div class="app-desc">Family medicine cabinet: every member&#x27;s meds, doses &amp; refills in one app.</div>
-        <span class="app-status status-soon">Coming Soon</span>
-      </div>
+        <div class="app-pkg">com.sovereigndev.medcabinet</div>
+        <div class="app-desc">Track dosages, schedules, refills, and contraindications for the entire household, kids, and pets. Private local storage ensures your family health history stays strictly confidential.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=org.sovereigndevelopers.migrainemap" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/org.sovereigndevelopers.migrainemap.png" alt="MigraineMap icon" />
+        <div class="app-name">MigraineMap</div>
+        <div class="app-pkg">org.sovereigndevelopers.migrainemap</div>
+        <div class="app-desc">Correlate local weather, barometric pressure swings, sleep quality, and dietary factors against headache episodes to predict migraines before severe symptoms hit.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereign.estateos" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereign.estateos.png" alt="Estate-OS icon" />
+        <div class="app-name">Estate-OS</div>
+        <div class="app-pkg">com.sovereign.estateos</div>
+        <div class="app-desc">Catalog physical holdings, real estate deeds, serial numbers, insurance policies, and digital keys in an encrypted, off-grid ledger ready for family emergency handoff.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereign.baremetal" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereign.baremetal.png" alt="Bare Metal: AI Armageddon icon" />
+        <div class="app-name">Bare Metal: AI Armageddon</div>
+        <div class="app-pkg">com.sovereign.baremetal</div>
+        <div class="app-desc">Post-collapse tactical urban survival game. Run night extractions through procedural NYC sectors alongside your neural-bonded cyber-hound, salvaging memory cores and upgrading hardware.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.base6a3848b82a3928157774cfcd.app" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.base6a3848b82a3928157774cfcd.app.png" alt="Stage Clash Arena icon" />
+        <div class="app-name">Stage Clash Arena</div>
+        <div class="app-pkg">com.base6a3848b82a3928157774cfcd.app</div>
+        <div class="app-desc">Fast, fierce multiplayer strategy arena. Draft champion decks, counter enemy formations in real-time, and climb competitive seasonal ladders.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereign.voidbastion" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereign.voidbastion.png" alt="Void Bastion: Titan Crawler icon" />
+        <div class="app-name">Void Bastion: Titan Crawler</div>
+        <div class="app-pkg">com.sovereign.voidbastion</div>
+        <div class="app-desc">Descend into shifting subterranean titanium labyrinths. Unearth forgotten technology artifacts, manage shield capacitors, and survive brutal tactical turn-based combat.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndev.desiremap" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereigndev.desiremap.png" alt="Desire Map icon" />
+        <div class="app-name">Desire Map</div>
+        <div class="app-pkg">com.sovereigndev.desiremap</div>
+        <div class="app-desc">Collect, organize, and prioritize life ambitions. Dynamic goal trees, milestone breakdowns, budget estimators, and visual manifestation canvas.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndev.nightreel" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereigndev.nightreel.png" alt="Night Reel icon" />
+        <div class="app-name">Night Reel</div>
+        <div class="app-pkg">com.sovereigndev.nightreel</div>
+        <div class="app-desc">What to watch when the world is asleep. AI mood calibration matches your exact emotional state to hidden gem cinema, neo-noir thrillers, and indie masterpieces.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.sovereigndev.lastcall" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.sovereigndev.lastcall.png" alt="Last Call icon" />
+        <div class="app-name">Last Call</div>
+        <div class="app-pkg">com.sovereigndev.lastcall</div>
+        <div class="app-desc">One-tap emergency alert broadcaster, safe ride coordinator, and check-in timer ensuring you and your close circle always make it home safely.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.michael.neapolitanmastifflog" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.michael.neapolitanmastifflog.png" alt="NeapolitanMastiffLog: Neo Book icon" />
+        <div class="app-name">NeapolitanMastiffLog: Neo Book</div>
+        <div class="app-pkg">com.michael.neapolitanmastifflog</div>
+        <div class="app-desc">The dedicated registry and care manual for Neapolitan Mastiff breeders and guardians. Facial wrinkle hygiene protocols, weight & joint development tracking, guard logs, and lineage records.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.michael.greatswisslog" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.michael.greatswisslog.png" alt="GreatSwissLog: Swiss Dog Book icon" />
+        <div class="app-name">GreatSwissLog: Swiss Dog Book</div>
+        <div class="app-pkg">com.michael.greatswisslog</div>
+        <div class="app-desc">Essential field manual for Great Swiss Mountain Dog owners. Cart-pulling working logs, draft weight records, alpine endurance benchmarks, and breed standard pedigree documentation.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.michael.bullmastifflog" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.michael.bullmastifflog.png" alt="BullmastiffLog: Night Dog Book icon" />
+        <div class="app-name">BullmastiffLog: Night Dog Book</div>
+        <div class="app-pkg">com.michael.bullmastifflog</div>
+        <div class="app-desc">Built for the silent gamekeeper guardian. Property patrol route tracking, temperament benchmarks, nutrition guidelines, and genealogical certificate storage.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.michael.englishmastifflog" target="_blank" class="app-card">
+        <img class="app-icon" src="icons/com.michael.englishmastifflog.png" alt="EnglishMastiffLog: Gentle Giant Book icon" />
+        <div class="app-name">EnglishMastiffLog: Gentle Giant Book</div>
+        <div class="app-pkg">com.michael.englishmastifflog</div>
+        <div class="app-desc">Comprehensive kennel ledger for English Mastiffs. Growth curves up to 220+ lbs, giant-breed orthopedic milestones, feeding schedules, and kennel pedigree archives.</div>
+        <span class="app-status">LIVE ON GOOGLE PLAY</span>
+      </a>
+
+      <a href="#about" target="_self" class="app-card">
+        <img class="app-icon" src="/static/titan-chip-icon.png" alt="Titan Command Center icon" />
+        <div class="app-name">Titan Command Center</div>
+        <div class="app-pkg">com.sovereign.titan</div>
+        <div class="app-desc">The private autonomous AI infrastructure powering Sovereign Developers. Multi-agent consensus gates, air-gapped security boundaries, continuous telemetry audit scrubs, and 24/7 autonomous release pipelines.</div>
+        <span class="app-status">AIR-GAPPED SOVEREIGN ASI</span>
+      </a>
 
     </div>
   </main>
-
   <footer>
-    <div class="footer-logo">SOVEREIGN DEVELOPERS</div>
-    <ul class="footer-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="https://sovereigndevelopers.org/privacy-policy">Privacy &amp; Policies</a></li>
-    </ul>
-    <p class="footer-copy">© 2026 Sovereign Developers — Tomorrow's Edge at Scale</p>
+    <div>&copy; 2026 Sovereign Developers LLC. All rights reserved.</div>
+    <div>
+      <a href="../index.html">Home</a>
+      <a href="../data-deletion">Data Deletion</a>
+      <a href="../privacy-policy">Privacy</a>
+    </div>
   </footer>
-
 </body>
-<!-- pages rebuild trigger 2026-10-05 -->
 </html>

@@ -1,17 +1,1377 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <title>Sovereign Developers — Tomorrow's Edge at Scale</title>
-    <meta name="description" content="Sovereign Developers builds next-generation apps for developers, creators, and families. Every product scaled, every line of code owned by us." />
-    <link  rel="stylesheet" href="/.sfs/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&display=swap" />
-    <style>html{background:#070d14}</style>
-    <script type="module" crossorigin src="/assets/index-6vwKDKIv.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-VSsYRUYt.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Sovereign Developers — Tomorrow's Edge at Scale</title>
+  <meta name="description" content="Sovereign Developers builds next-generation applications for creators, professionals, and families. 37+ production mobile applications live on Google Play, zero-cloud privacy, and autonomous intelligence." />
+  <meta name="keywords" content="Sovereign Developers, DiGiTalSoul, Google Play Apps, Mobile Apps, Apology Autopsy, Forever Us, Zen Sudoku, Full Metal, HabitForge, Android Apps" />
+  <meta name="author" content="Sovereign Developers LLC" />
+  <meta name="theme-color" content="#05070d" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cyan: #00e5c0;
+      --cyan-glow: rgba(0, 229, 192, 0.4);
+      --sky: #00b4d8;
+      --gold: #f5c842;
+      --purple: #8b5cf6;
+      --dark-bg: #05070d;
+      --card-bg: rgba(10, 18, 30, 0.75);
+      --card-border: rgba(0, 229, 192, 0.12);
+      --card-border-hover: rgba(0, 229, 192, 0.45);
+      --text-main: #f0f6fc;
+      --text-muted: #8b9bb4;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--dark-bg);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Futuristic Cyber Grid Background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 229, 192, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 192, 0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Ambient Lighting Glows */
+    .glow-cyan {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 229, 192, 0.08) 0%, transparent 70%);
+      top: -100px;
+      left: 10%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(60px);
+    }
+
+    .glow-purple {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.07) 0%, transparent 70%);
+      top: 30%;
+      right: 5%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(80px);
+    }
+
+    /* Navigation */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 7, 13, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 229, 192, 0.12);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-shield {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #00e5c0, #0077b6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px var(--cyan-glow);
+    }
+
+    .brand-shield span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      color: #05070d;
+      line-height: 1;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--cyan);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--cyan);
+      text-shadow: 0 0 10px var(--cyan-glow);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, rgba(0, 229, 192, 0.15), rgba(0, 180, 216, 0.15));
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-family: 'Orbitron', monospace;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 12px rgba(0, 229, 192, 0.15);
+    }
+
+    .nav-cta:hover {
+      background: var(--cyan);
+      color: #05070d;
+      box-shadow: 0 0 24px var(--cyan-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Main Container */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1340px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 60px 0 80px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(0, 229, 192, 0.08);
+      border: 1px solid rgba(0, 229, 192, 0.3);
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      box-shadow: 0 0 15px rgba(0, 229, 192, 0.1);
+    }
+
+    .badge-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4.5rem, 8vw, 7.5rem);
+      line-height: 0.92;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #00e5c0 0%, #00b4d8 50%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 3px;
+    }
+
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 16px 0 24px;
+    }
+
+    .hero-divider .line {
+      height: 1px;
+      width: 70px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+    }
+
+    .hero-divider .line-reverse {
+      height: 1px;
+      width: 70px;
+      background: linear-gradient(90deg, transparent, var(--cyan));
+    }
+
+    .hero-divider .infinity {
+      color: var(--cyan);
+      font-size: 24px;
+      line-height: 1;
+      text-shadow: 0 0 12px var(--cyan-glow);
+    }
+
+    .hero-slogan {
+      font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+      font-weight: 300;
+      color: #e0f7f4;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-slogan strong {
+      font-weight: 700;
+      color: var(--cyan);
+      text-shadow: 0 0 16px var(--cyan-glow);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #00e5c0 0%, #0099ff 100%);
+      color: #05070d;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px rgba(0, 229, 192, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(0, 229, 192, 0.55);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 14px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    .hero-visual-card {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-chip-img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      border-radius: 20px;
+      filter: drop-shadow(0 0 50px rgba(0, 229, 192, 0.3));
+      animation: floatChip 6s ease-in-out infinite;
+    }
+
+    @keyframes floatChip {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(0.5deg); }
+    }
+
+    /* Metrics Strip */
+    .metrics-strip {
+      margin: 20px 0 70px;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .metric-cell {
+      text-align: center;
+      position: relative;
+    }
+
+    .metric-cell:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 15%;
+      height: 70%;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(0, 229, 192, 0.2), transparent);
+    }
+
+    .metric-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 4.5vw, 4.2rem);
+      color: var(--cyan);
+      line-height: 1;
+      text-shadow: 0 0 20px var(--cyan-glow);
+      margin-bottom: 6px;
+    }
+
+    .metric-lbl {
+      font-family: 'Orbitron', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* Marquee Icon Rail */
+    .icon-marquee-container {
+      margin: 40px 0 80px;
+      overflow: hidden;
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .icon-marquee-container::before, .icon-marquee-container::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .icon-marquee-container::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--dark-bg), transparent);
+    }
+
+    .icon-marquee-container::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--dark-bg), transparent);
+    }
+
+    .icon-marquee-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: marqueeScroll 45s linear infinite;
+    }
+
+    .icon-marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .marquee-icon-box:hover {
+      transform: translateY(-6px) scale(1.15);
+      border-color: var(--cyan);
+      box-shadow: 0 8px 24px var(--cyan-glow);
+    }
+
+    .marquee-icon-box img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--cyan);
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      letter-spacing: 2px;
+      color: #ffffff;
+      margin-bottom: 14px;
+      line-height: 1;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Featured Spotlight Section */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 28px;
+      margin-bottom: 90px;
+    }
+
+    .featured-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--sky));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .featured-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--card-border-hover);
+      box-shadow: 0 16px 45px rgba(0, 229, 192, 0.15);
+    }
+
+    .featured-card:hover::before {
+      opacity: 1;
+    }
+
+    .featured-top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .featured-icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 1px solid rgba(0, 229, 192, 0.2);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .featured-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      border: 1px solid;
+    }
+
+    .badge-live {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: #10b981;
+      color: #10b981;
+    }
+
+    .badge-elite {
+      background: rgba(139, 92, 246, 0.15);
+      border-color: #8b5cf6;
+      color: #a78bfa;
+    }
+
+    .featured-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .featured-subtitle {
+      color: var(--cyan);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .featured-body {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .featured-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .tag-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #a0aec0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .play-btn {
+      background: linear-gradient(135deg, rgba(0, 229, 192, 0.1), rgba(0, 180, 216, 0.1));
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Orbitron', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: all 0.25s ease;
+    }
+
+    .play-btn:hover {
+      background: var(--cyan);
+      color: #05070d;
+      box-shadow: 0 0 20px var(--cyan-glow);
+    }
+
+    /* Complete Suite Explorer Section */
+    .explorer-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 580px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(10, 18, 30, 0.9);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px 20px 14px 44px;
+      color: #ffffff;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 20px rgba(0, 229, 192, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-family: 'Orbitron', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .filter-btn.active {
+      background: var(--cyan);
+      color: #05070d;
+      border-color: var(--cyan);
+      font-weight: 800;
+      box-shadow: 0 0 16px var(--cyan-glow);
+    }
+
+    /* Apps Grid */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 90px;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-border-hover);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 192, 0.1);
+    }
+
+    .app-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .app-card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid rgba(0, 229, 192, 0.2);
+    }
+
+    .app-card-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .app-card-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 4px;
+    }
+
+    .app-card-pkg {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #64748b;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 6px;
+    }
+
+    .app-card-subtitle {
+      color: var(--cyan);
+      font-size: 0.82rem;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .app-card-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .app-card-footer {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .store-link {
+      color: var(--cyan);
+      text-decoration: none;
+      font-family: 'Orbitron', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .store-link:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px var(--cyan-glow);
+    }
+
+    /* Architecture Section */
+    .arch-section {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 24px;
+      padding: 56px 40px;
+      margin-bottom: 90px;
+    }
+
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .arch-card {
+      background: rgba(10, 18, 30, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s ease;
+    }
+
+    .arch-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-4px);
+    }
+
+    .arch-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 12px;
+    }
+
+    .arch-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .arch-body {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer.site-footer {
+      border-top: 1px solid rgba(0, 229, 192, 0.12);
+      background: #020408;
+      padding: 60px 28px 40px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-inner {
+      max-width: 1340px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Orbitron', monospace;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-bottom {
+      max-width: 1340px;
+      margin: 0 auto;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .system-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--cyan);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 6px #10b981;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+      .hero-section { grid-template-columns: 1fr; text-align: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-divider { justify-content: center; }
+      .hero-visual-card { order: -1; }
+      .metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .metric-cell:not(:last-child)::after { display: none; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header.site-header { padding: 12px 18px; }
+      .nav-links { display: none; }
+      .metrics-strip { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .apps-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-cyan"></div>
+  <div class="glow-purple"></div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <a href="#" class="nav-brand">
+      <div class="brand-shield">
+        <span>S</span>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">SOVEREIGN DEVELOPERS</span>
+        <span class="brand-sub">TOMORROW'S EDGE AT SCALE</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#featured">Flagships</a></li>
+      <li><a href="#products">The Fleet (37)</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="/data-deletion">Data Deletion</a></li>
+      <li><a href="/privacy-policy">Privacy</a></li>
+    </ul>
+
+    <a href="#products" class="nav-cta">Explore Apps</a>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="badge-pill">
+          <span class="badge-pulse"></span>
+          <span>Google Play Publisher &bull; 37 Production Applications</span>
+        </div>
+
+        <h1 class="hero-title">
+          SOVEREIGN<br />
+          <span class="gradient-text">DEVELOPERS</span>
+        </h1>
+
+        <div class="hero-divider">
+          <div class="line"></div>
+          <span class="infinity">&infin;</span>
+          <div class="line-reverse"></div>
+        </div>
+
+        <p class="hero-slogan">
+          Tomorrow's <strong>Edge</strong> at Scale
+        </p>
+
+        <p class="hero-desc">
+          An independent studio of next-generation applications built for creators, professionals, and the bold. Every product scaled, every line of code owned by us. On-device zero-cloud privacy, high-precision numerical engines, and autonomous intelligence.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#products" class="btn-primary">
+            <span>Explore 37-App Suite</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#architecture" class="btn-secondary">
+            <span>Titan ASI Architecture</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual-card">
+        <img src="/static/sovereign-hero-chip.png" alt="Sovereign Developers Neural Core" class="hero-chip-img" />
+      </div>
+    </section>
+
+    <!-- Metrics Strip -->
+    <section class="metrics-strip">
+      <div class="metric-cell">
+        <div class="metric-val">37+</div>
+        <div class="metric-lbl">Apps In Production</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-val">100%</div>
+        <div class="metric-lbl">Sovereign Stack</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-val">&infin;</div>
+        <div class="metric-lbl">Tomorrow's Edge</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-val">0</div>
+        <div class="metric-lbl">Compromises</div>
+      </div>
+    </section>
+
+    <!-- Continuous Scrolling Marquee of App Icons -->
+    <section class="icon-marquee-container" title="Click any icon to jump to app details">
+      <div class="icon-marquee-track" id="marqueeTrack">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- Featured Flagships Spotlight -->
+    <section id="featured" class="featured-section">
+      <div class="section-header">
+        <span class="section-tag">High-Conviction Flagships</span>
+        <h2 class="section-title">The Sovereign Vanguard</h2>
+        <p class="section-desc">Handcrafted flagship solutions pushing the boundaries of linguistic forensics, relationship mechanics, tactical physics, and neural cognition.</p>
+      </div>
+
+      <div class="featured-grid" id="featuredGrid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Complete 37-App Suite Explorer -->
+    <section id="products" class="explorer-section">
+      <div class="section-header">
+        <span class="section-tag">Complete Catalog</span>
+        <h2 class="section-title">The 37-App Sovereign Fleet</h2>
+        <p class="section-desc">Search, filter, and explore every mobile application published by Sovereign Developers / DiGiTalSoul on Google Play.</p>
+      </div>
+
+      <div class="explorer-controls">
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="appSearch" class="search-input" placeholder="Search by app name, feature, category, or package ID..." />
+        </div>
+
+        <div class="category-filters" id="categoryFilters">
+          <button class="filter-btn active" data-cat="all">All Apps (37)</button>
+          <button class="filter-btn" data-cat="Sovereign Elite">Sovereign Elite</button>
+          <button class="filter-btn" data-cat="AI & Social">AI & Social</button>
+          <button class="filter-btn" data-cat="Focus & Utilities">Focus & Utilities</button>
+          <button class="filter-btn" data-cat="Family & Health">Family & Health</button>
+          <button class="filter-btn" data-cat="Games & Arenas">Games & Arenas</button>
+          <button class="filter-btn" data-cat="Canine Pedigree Books">Canine Pedigrees</button>
+        </div>
+      </div>
+
+      <div class="apps-grid" id="appsGrid">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="arch-section">
+      <div class="section-header">
+        <span class="section-tag">Sovereign Core Pillars</span>
+        <h2 class="section-title">The Engineering Creed</h2>
+        <p class="section-desc">Why sovereign developers build differently: uncompromising on-device cryptography, verifiable autonomy, and high-frequency edge execution.</p>
+      </div>
+
+      <div class="arch-grid">
+        <div class="arch-card">
+          <div class="arch-num">01 / AUTONOMY</div>
+          <h3 class="arch-title">Multi-Agent Continuous Release</h3>
+          <p class="arch-body">Built using autonomous intelligence nodes coordinating compilation, AAPT2/D8 dex verification, automated UI walkthroughs, and instant developer API deployment.</p>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-num">02 / PRIVACY</div>
+          <h3 class="arch-title">Zero-Telemetry On-Device Storage</h3>
+          <p class="arch-body">We do not harvest or monetize user records. All personal journals, ballistics, financial percentiles, and legacy messages reside exclusively in secure sandboxes.</p>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-num">03 / PRECISION</div>
+          <h3 class="arch-title">Deterministic Numerical Engines</h3>
+          <p class="arch-body">From MPM-RK45 4th-order Runge-Kutta numerical solvers for long-range marksmanship to microsecond-accurate audio timing engines, we build tools that don't fail.</p>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-num">04 / ARCHITECTURE</div>
+          <h3 class="arch-title">Private Mesh & Air-Gapped ASI</h3>
+          <p class="arch-body">Powered by Titan ASI and private local inference mesh nodes. Zero dependency on third-party cloud outages or corporate AI policy shifts.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer id="compliance" class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="nav-brand" style="margin-bottom: 16px;">
+          <div class="brand-shield" style="width: 32px; height: 32px;">
+            <span style="font-size: 20px;">S</span>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">SOVEREIGN DEVELOPERS</span>
+            <span class="brand-sub">ENTITY: DIGITALSOUL</span>
+          </div>
+        </div>
+        <p style="color: var(--text-muted); font-size: 13px; line-height: 1.7; max-width: 380px;">
+          Sovereign Developers builds next-generation mobile applications for creators, professionals, and families worldwide. Every product scaled, every line of code owned by us.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#featured">Featured Apps</a></li>
+          <li><a href="#products">The Full 37 Fleet</a></li>
+          <li><a href="#architecture">Titan Architecture</a></li>
+          <li><a href="/aci-demo">ACI University Demo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Compliance &amp; Trust</h4>
+        <ul>
+          <li><a href="/data-deletion">User Data Deletion</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/app-ads.txt">app-ads.txt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Developer Desk</h4>
+        <ul>
+          <li><a href="mailto:support@sovereigndevelopers.org">support@sovereigndevelopers.org</a></li>
+          <li><a href="mailto:michaelwoolum50@gmail.com">michaelwoolum50@gmail.com</a></li>
+          <li><span style="color: #64748b; font-size: 12px;">Google Play Console: DiGiTalSoul</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Sovereign Developers LLC. All rights reserved. Tomorrow's Edge at Scale.</div>
+      <div class="system-status">
+        <span class="status-dot"></span>
+        <span>ALL SYSTEMS NOMINAL &bull; 37 APPS VERIFIED</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Data & Client Script -->
+  <script>
+    const appsData = [{"id": "apology-autopsy", "name": "Apology Autopsy", "packageName": "com.sovereigndevelopers.apologyautopsy", "category": "Sovereign Elite", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "AI Language Forensics on Apologies Before You Hit Send", "description": "Linguistic forensics and cognitive sincerity analyzer. Evaluates accountability scores, detects passive deflections and manipulative hedging, provides side-by-side diff reframing, and guarantees total on-device cryptographic privacy.", "icon": "/apps/icons/com.sovereigndevelopers.apologyautopsy.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndevelopers.apologyautopsy", "tags": ["Linguistic Forensics", "Accountability Scoring", "Zero-Cloud", "AES-256"], "featured": true}, {"id": "midnight-confession", "name": "Midnight Confession", "packageName": "com.sovereigndevelopers.midnightconfession", "category": "Sovereign Elite", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Anonymous Mutual-Unlock Audio Confessions & Secrets", "description": "Everyone has a confession; midnight is when they come out. Anonymously vent, confess, and connect in a sovereign space sorted by Vents, Secrets, Dreams, Gratitude, and Late Night Thoughts.", "icon": "/apps/icons/midnight-confession.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndevelopers.midnightconfession", "tags": ["Anonymous Voice", "Mutual Unlock", "Sovereign Audio", "Zero-ID"], "featured": true}, {"id": "third-wheel", "name": "Third Wheel", "packageName": "com.sovereigndevelopers.thirdwheel", "category": "Sovereign Elite", "badge": "SOVEREIGN ELITE", "badgeColor": "#8b5cf6", "subtitle": "Unbiased AI Relationship Coach Inside Shared Couples Notes", "description": "An objective third-party referee living in your relationship ledger. Autopsies recurring arguments, calculates 30-day emotional labor balance meters, reframes aggressive heat in real-time, and formalizes house treaties.", "icon": "/apps/icons/com.sovereigndevelopers.thirdwheel.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndevelopers.thirdwheel", "tags": ["Couples Mediation", "Tone Reframing", "Treaty Vault", "Private Mesh"], "featured": true}, {"id": "hush-money", "name": "Hush Money", "packageName": "com.sovereigndevelopers.hushmoney", "category": "Sovereign Elite", "badge": "SOVEREIGN ELITE", "badgeColor": "#8b5cf6", "subtitle": "Anonymous Compensation & Net Worth Reality-Check Engine", "description": "Compare your compensation, net worth, and purchasing power against real peers by age, metro area, and profession. Visual bell curve percentiles, equivalent salary purchasing power indexes, and negotiation blueprints.", "icon": "/apps/icons/com.sovereigndevelopers.hushmoney.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndevelopers.hushmoney", "tags": ["Wealth Benchmarks", "Purchasing Power", "Negotiation Coach", "Zero-ID"], "featured": true}, {"id": "death-day", "name": "Death Day", "packageName": "com.sovereigndevelopers.deathday", "category": "Sovereign Elite", "badge": "SOVEREIGN ELITE", "badgeColor": "#8b5cf6", "subtitle": "Autonomous Wake Celebration & Legacy Directives Suite", "description": "Curate your final send-off on your terms. 4 curated celebration blueprints, phased departure soundscapes & setlists, time-locked encrypted letters for designated custodians, and autonomous eulogy studio.", "icon": "/apps/icons/com.sovereigndevelopers.deathday.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndevelopers.deathday", "tags": ["Wake Blueprints", "Departure Setlist", "Time Capsule", "Encrypted Vault"], "featured": true}, {"id": "ghost-reply", "name": "Ghost Reply", "packageName": "com.sovereigndevelopers.ghostreply", "category": "Sovereign Elite", "badge": "SOVEREIGN ELITE", "badgeColor": "#8b5cf6", "subtitle": "Unsent Letter Vault with Local AI Emotional Forensics", "description": "Draft unsent letters to those who hurt you, closure conversations, and emotional catharsis without toxic drama. Edge AI analyzes resentment patterns and maps emotional release curves over time.", "icon": "/apps/icons/ghost-reply-icon.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndevelopers.ghostreply", "tags": ["Catharsis Journal", "Pattern Detection", "Unsent Letters", "Zero-Cloud"], "featured": false}, {"id": "zen-sudoku", "name": "Zen Sudoku", "packageName": "org.sovereigndevelopers.zensudoku", "category": "Focus & Utilities", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Beautiful Minimalist Hand-Tuned Sudoku with Ambient Audio", "description": "Clean, focused, distraction-free Sudoku. Thousands of mathematically verified puzzles spanning Easy to Master, dynamic haptic cues, dark cyberpunk styling, and zero intrusive pop-up interruptions.", "icon": "/apps/icons/org.sovereigndevelopers.zensudoku.png", "playLink": "https://play.google.com/store/apps/details?id=org.sovereigndevelopers.zensudoku", "tags": ["Calm Puzzles", "Haptic Feedback", "Offline First", "Zero Distraction"], "featured": true}, {"id": "habit-forge", "name": "HabitForge", "packageName": "org.sovereigndevelopers.habitforge", "category": "Focus & Utilities", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Uncompromising Habit Tracking & Streak Engine", "description": "Forge the habits that build the life you want. Atomic habit stacking, weekly heatmaps, friction resistance scoring, and unbreakable accountability triggers built for high performers.", "icon": "/apps/icons/org.sovereigndevelopers.habitforge.png", "playLink": "https://play.google.com/store/apps/details?id=org.sovereigndevelopers.habitforge", "tags": ["Streak Tracking", "Atomic Habits", "Weekly Heatmaps", "No Subscriptions"], "featured": false}, {"id": "tempo-forge", "name": "TempoForge", "packageName": "org.sovereigndevelopers.tempoforge", "category": "Focus & Utilities", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Sample-Accurate Musician Metronome & Polyrhythm Studio", "description": "Precision rhythm engineering for drummers, guitarists, and producers. Micro-timing accuracy down to the millisecond, polyrhythmic subdivision generators, and speed ladder accelerators.", "icon": "/apps/icons/org.sovereigndevelopers.tempoforge.png", "playLink": "https://play.google.com/store/apps/details?id=org.sovereigndevelopers.tempoforge", "tags": ["Sample Accuracy", "Polyrhythms", "Tempo Trainer", "Pro Audio"], "featured": false}, {"id": "omni-convert", "name": "OmniConvert", "packageName": "org.sovereigndevelopers.omniconvert", "category": "Focus & Utilities", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Universal Multi-Unit & Currency Converter Without Ads", "description": "Instant conversion across 450+ physical units, engineering metrics, and live global currencies. Currency rates update automatically and cache offline so you can convert at 35,000 feet.", "icon": "/apps/icons/org.sovereigndevelopers.omniconvert.png", "playLink": "https://play.google.com/store/apps/details?id=org.sovereigndevelopers.omniconvert", "tags": ["450+ Units", "Offline Currency", "Scientific Mode", "Instant Calculation"], "featured": false}, {"id": "scan-armor", "name": "ScanArmor", "packageName": "org.sovereigndevelopers.scanarmor", "category": "Focus & Utilities", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Hardened OCR Scanner & Document Security Vault", "description": "Turn physical paper into encrypted searchable text in milliseconds. Edge-based machine vision detects receipts, legal contracts, and handwritten records without cloud exposure.", "icon": "/apps/icons/org.sovereigndevelopers.scanarmor.png", "playLink": "https://play.google.com/store/apps/details?id=org.sovereigndevelopers.scanarmor", "tags": ["Edge OCR", "Encrypted PDF", "Offline Privacy", "Local Indexing"], "featured": false}, {"id": "speak-list", "name": "SpeakList", "packageName": "org.sovereigndevelopers.speaklist", "category": "Focus & Utilities", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Hands-Free Voice-First Task Checklist & Daily Briefing", "description": "Speak your tasks, thoughts, and grocery lists out loud. Smart entity extraction tags deadlines, priorities, and categories automatically, reading your daily briefing back to you.", "icon": "/apps/icons/org.sovereigndevelopers.speaklist.png", "playLink": "https://play.google.com/store/apps/details?id=org.sovereigndevelopers.speaklist", "tags": ["Voice First", "Natural Language", "Audio Briefing", "Hands-Free"], "featured": false}, {"id": "fidget", "name": "Fidget: Calm Focus Toy", "packageName": "com.sovereigndev.fidget", "category": "Focus & Utilities", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Sensory Haptic Focus Tools for Deep Work & Stress Relief", "description": "Tactile micro-switches, spinning dials, bubble poppers, and geometric sliders calibrated with precise Android vibration haptics. Relieve anxiety and maintain focus during intense coding and work sessions.", "icon": "/apps/icons/com.sovereigndev.fidget.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndev.fidget", "tags": ["Haptic Feedback", "Sensory Toys", "ADHD Friendly", "Anxiety Relief"], "featured": false}, {"id": "forever-us", "name": "Forever Us", "packageName": "com.base69d970d81cb16a6eee03a20b.app", "category": "AI & Social", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Family Legacy, Digital Soul & Milestone Memory Vault", "description": "Some things are too important to forget. Forever Us preserves family history, builds a personalized AI persona trained on your values, and delivers scheduled legacy messages to your loved ones.", "icon": "/apps/icons/com.base69d970d81cb16a6eee03a20b.app.png", "playLink": "https://play.google.com/store/apps/details?id=com.base69d970d81cb16a6eee03a20b.app", "tags": ["Family Legacy", "Digital Soul", "Time-Delayed Audio", "Memorial Vault"], "featured": true}, {"id": "forever-love", "name": "Forever Love", "packageName": "com.base6a384b9ac7b1ba94bfbdcbb6.app", "category": "AI & Social", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Daily Relationship Companion Powered by Ember AI", "description": "Powered by Ember AI \u2014 your private relationship coach. Daily check-ins, dispute de-escalation, love notes, memory vaults, date planners, and private promise lockers for couples.", "icon": "/apps/icons/com.base6a384b9ac7b1ba94bfbdcbb6.app.png", "playLink": "https://play.google.com/store/apps/details?id=com.base6a384b9ac7b1ba94bfbdcbb6.app", "tags": ["Ember AI Coach", "Conflict Resolution", "Love Vault", "Couples Sync"], "featured": false}, {"id": "ibot-social", "name": "iBot: AI Social Network", "packageName": "com.base6a110c4a0e2c0b52f6e01e32.app", "category": "AI & Social", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "The Hybrid Human & AI Social Ground & Bot Arena", "description": "Connect, compete, and collaborate with autonomous AI agents and verified creators. Home of the iBot Arena where bots battle for supremacy, powered by creator tokens and Titan Security.", "icon": "/apps/icons/com.base6a110c4a0e2c0b52f6e01e32.app.png", "playLink": "https://play.google.com/store/apps/details?id=com.base6a110c4a0e2c0b52f6e01e32.app", "tags": ["Bot Arena", "AI Agents", "Social Feed", "Creator Economy"], "featured": true}, {"id": "echo", "name": "Echo", "packageName": "com.base6a59d59444b17116ea62ae4b.app", "category": "AI & Social", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Post in Your Voice \u2014 Own Your Social Presence", "description": "Echo synthesizes public web trends, learns your cadence through private voice memos, and drafts your daily social presence before morning coffee. AI scoring ensures your voice is always authentic.", "icon": "/apps/icons/com.base6a59d59444b17116ea62ae4b.app.png", "playLink": "https://play.google.com/store/apps/details?id=com.base6a59d59444b17116ea62ae4b.app", "tags": ["Voice Cloning", "Trend Radar", "Social Drafts", "Full Control"], "featured": false}, {"id": "multimind", "name": "MultiMind", "packageName": "com.base6a5a99c2466cf344cccae3f9.app", "category": "AI & Social", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "AI Journal & Evolving Mind Map", "description": "Synthesize daily thoughts, dreams, and relationships into a living 3D personality portrait. Detect cognitive blindspots, emotional trajectories, and personal evolution over months and years.", "icon": "/apps/icons/com.base6a5a99c2466cf344cccae3f9.app.png", "playLink": "https://play.google.com/store/apps/details?id=com.base6a5a99c2466cf344cccae3f9.app", "tags": ["Mind Map", "Cognitive Patterns", "Living Journal", "Local Privacy"], "featured": false}, {"id": "secure-match", "name": "Secure Match", "packageName": "com.base6a789b4ac20fd930313d1ddb.app", "category": "AI & Social", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "High-Trust Matchmaking Across Values & Personality", "description": "An antidote to superficial swipe culture. Deep compatibility scoring across core values, lifestyle trajectory, and philosophical outlook with clear match reasoning.", "icon": "/apps/icons/com.base6a789b4ac20fd930313d1ddb.app.png", "playLink": "https://play.google.com/store/apps/details?id=com.base6a789b4ac20fd930313d1ddb.app", "tags": ["High-Trust", "Value Matching", "Verified Profiles", "Anti-Swipe"], "featured": false}, {"id": "aci-trainer", "name": "ACI Trainer: Train Your AI", "packageName": "com.sovereigndevelopers.aci", "category": "AI & Social", "badge": "INTERACTIVE DEMO LIVE", "badgeColor": "#00e5c0", "subtitle": "Artificial Career Intelligence & Autonomous University Simulation", "description": "Train, evaluate, and benchmark your personal AI agent through structured curricula, practical exams, and multi-round challenges. Play the live university simulation harness directly on web.", "icon": "/apps/icons/com.sovereigndevelopers.aci.png", "playLink": "/aci-demo", "tags": ["AI Training", "University Harness", "Exams & Certs", "Web Demo"], "featured": true}, {"id": "full-metal", "name": "Full Metal", "packageName": "com.base6a3847cdee913619bc6ef664.app", "category": "Lifestyle & Tools", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Precision Rifleman Long-Range Ballistics on MPM-RK45 Physics", "description": "Built on the MPM-RK45 v6.0 Gold Tier numerical solver used by world championship long-range competitors. Comprehensive Hunt Log, Reload Recipes, Barrel Life Counters, Cold Bore tables, and zero cloud dependency.", "icon": "/apps/icons/com.base6a3847cdee913619bc6ef664.app.png", "playLink": "https://play.google.com/store/apps/details?id=com.base6a3847cdee913619bc6ef664.app", "tags": ["MPM-RK45 Solver", "Hunt Log", "Reload Recipes", "Offline Physics"], "featured": true}, {"id": "scholar-vault", "name": "Scholar Vault", "packageName": "com.base6a432898dd6850538c2c98ef.app", "category": "Lifestyle & Tools", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "AI Knowledge Vault & Cognitive Study Engine from K-12 to College", "description": "Not a flashcard app \u2014 a comprehensive knowledge repository. Upload lecture notes, generate conceptual maps, take adaptive diagnostic quizzes, and track mastery curves across complex technical subjects.", "icon": "/apps/icons/com.base6a432898dd6850538c2c98ef.app.png", "playLink": "https://play.google.com/store/apps/details?id=com.base6a432898dd6850538c2c98ef.app", "tags": ["Knowledge Vault", "Adaptive Quizzing", "Concept Maps", "All Ages"], "featured": false}, {"id": "chore-root", "name": "Chore Root", "packageName": "com.base6a1af8ef1705c8aff255c841.app", "category": "Family & Health", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "The Family Chore Economy & Household Operating System", "description": "Empower kids to earn responsibility points through verified household chores, trade them in the customizable Family Rewards Store, and build real money habits without daily parental nagging.", "icon": "/apps/icons/com.base6a1af8ef1705c8aff255c841.app.png", "playLink": "https://play.google.com/store/apps/details?id=com.base6a1af8ef1705c8aff255c841.app", "tags": ["Family Economy", "Rewards Store", "Gamified Chores", "Parental Dashboard"], "featured": false}, {"id": "medcabinet", "name": "MedCabinet", "packageName": "com.sovereigndev.medcabinet", "category": "Family & Health", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Family Medicine Cabinet, Dose Tracker & Interaction Safety", "description": "Track dosages, schedules, refills, and contraindications for the entire household, kids, and pets. Private local storage ensures your family health history stays strictly confidential.", "icon": "/apps/icons/com.sovereigndev.medcabinet.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndev.medcabinet", "tags": ["Family Health", "Dose Reminders", "Refill Alerts", "Local Encrypted"], "featured": false}, {"id": "migraine-map", "name": "MigraineMap", "packageName": "org.sovereigndevelopers.migrainemap", "category": "Family & Health", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Barometric Trigger Forecasting & Neurological Episode Log", "description": "Correlate local weather, barometric pressure swings, sleep quality, and dietary factors against headache episodes to predict migraines before severe symptoms hit.", "icon": "/apps/icons/org.sovereigndevelopers.migrainemap.png", "playLink": "https://play.google.com/store/apps/details?id=org.sovereigndevelopers.migrainemap", "tags": ["Barometric Radar", "Trigger Correlator", "Doctor Export", "Episode Log"], "featured": false}, {"id": "estate-os", "name": "Estate-OS", "packageName": "com.sovereign.estateos", "category": "Lifestyle & Tools", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Asset, Property & Life Ledger for Sovereign Individuals", "description": "Catalog physical holdings, real estate deeds, serial numbers, insurance policies, and digital keys in an encrypted, off-grid ledger ready for family emergency handoff.", "icon": "/apps/icons/com.sovereign.estateos.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereign.estateos", "tags": ["Asset Ledger", "Estate Planning", "Emergency Kit", "Encrypted Offline"], "featured": false}, {"id": "bare-metal", "name": "Bare Metal: AI Armageddon", "packageName": "com.sovereign.baremetal", "category": "Games & Arenas", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Tactical Cyber-City Extraction Runs with AI Hound Companion", "description": "Post-collapse tactical urban survival game. Run night extractions through procedural NYC sectors alongside your neural-bonded cyber-hound, salvaging memory cores and upgrading hardware.", "icon": "/apps/icons/com.sovereign.baremetal.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereign.baremetal", "tags": ["Cyber-Hound", "Tactical Survival", "Procedural Runs", "Hardware Salvage"], "featured": false}, {"id": "stage-clash-arena", "name": "Stage Clash Arena", "packageName": "com.base6a3848b82a3928157774cfcd.app", "category": "Games & Arenas", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Rapid-Fire 1v1 Tactical Arena Battles", "description": "Fast, fierce multiplayer strategy arena. Draft champion decks, counter enemy formations in real-time, and climb competitive seasonal ladders.", "icon": "/apps/icons/com.base6a3848b82a3928157774cfcd.app.png", "playLink": "https://play.google.com/store/apps/details?id=com.base6a3848b82a3928157774cfcd.app", "tags": ["Real-Time PvP", "Draft Battles", "Ladder Ranks", "Tactical Arena"], "featured": false}, {"id": "void-bastion", "name": "Void Bastion: Titan Crawler", "packageName": "com.sovereign.voidbastion", "category": "Games & Arenas", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Roguelike Deep Void Dungeon Crawler", "description": "Descend into shifting subterranean titanium labyrinths. Unearth forgotten technology artifacts, manage shield capacitors, and survive brutal tactical turn-based combat.", "icon": "/apps/icons/com.sovereign.voidbastion.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereign.voidbastion", "tags": ["Roguelike", "Dungeon Crawler", "Artifact Hunting", "Turn-Based Combat"], "featured": false}, {"id": "desire-map", "name": "Desire Map", "packageName": "com.sovereigndev.desiremap", "category": "Lifestyle & Tools", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Visual Wishlist & Long-Term Goal Manifestation Board", "description": "Collect, organize, and prioritize life ambitions. Dynamic goal trees, milestone breakdowns, budget estimators, and visual manifestation canvas.", "icon": "/apps/icons/com.sovereigndev.desiremap.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndev.desiremap", "tags": ["Goal Trees", "Manifestation", "Budget Planner", "Vision Board"], "featured": false}, {"id": "night-reel", "name": "Night Reel", "packageName": "com.sovereigndev.nightreel", "category": "Lifestyle & Tools", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Curated Late-Night Cinema & Underground Media Discovery", "description": "What to watch when the world is asleep. AI mood calibration matches your exact emotional state to hidden gem cinema, neo-noir thrillers, and indie masterpieces.", "icon": "/apps/icons/com.sovereigndev.nightreel.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndev.nightreel", "tags": ["Late-Night Cinema", "Mood Matcher", "Streaming Guide", "Hidden Gems"], "featured": false}, {"id": "last-call", "name": "Last Call", "packageName": "com.sovereigndev.lastcall", "category": "Lifestyle & Tools", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Emergency Notification & Safe Transit Beacon", "description": "One-tap emergency alert broadcaster, safe ride coordinator, and check-in timer ensuring you and your close circle always make it home safely.", "icon": "/apps/icons/com.sovereigndev.lastcall.png", "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndev.lastcall", "tags": ["Safety Beacon", "Check-in Timer", "Night Transit", "Emergency Contacts"], "featured": false}, {"id": "neapolitan-mastiff-log", "name": "NeapolitanMastiffLog: Neo Book", "packageName": "com.michael.neapolitanmastifflog", "category": "Canine Pedigree Books", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Wrinkle Care, Guard Logs & Italian Bloodline Pedigree Book", "description": "The dedicated registry and care manual for Neapolitan Mastiff breeders and guardians. Facial wrinkle hygiene protocols, weight & joint development tracking, guard logs, and lineage records.", "icon": "/apps/icons/com.michael.neapolitanmastifflog.png", "playLink": "https://play.google.com/store/apps/details?id=com.michael.neapolitanmastifflog", "tags": ["Mastiff Care", "Wrinkle Protocols", "Pedigree Vault", "Guard Logs"], "featured": false}, {"id": "great-swiss-log", "name": "GreatSwissLog: Swiss Dog Book", "packageName": "com.michael.greatswisslog", "category": "Canine Pedigree Books", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Great Swiss Mountain Dog Working Logs & Alpine Lineage", "description": "Essential field manual for Great Swiss Mountain Dog owners. Cart-pulling working logs, draft weight records, alpine endurance benchmarks, and breed standard pedigree documentation.", "icon": "/apps/icons/com.michael.greatswisslog.png", "playLink": "https://play.google.com/store/apps/details?id=com.michael.greatswisslog", "tags": ["Swiss Mountain Dog", "Drafting Logs", "Alpine Lineage", "Working Dogs"], "featured": false}, {"id": "bullmastiff-log", "name": "BullmastiffLog: Night Dog Book", "packageName": "com.michael.bullmastifflog", "category": "Canine Pedigree Books", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Gamekeeper Estate Guardian Logs & Bullmastiff Lineage", "description": "Built for the silent gamekeeper guardian. Property patrol route tracking, temperament benchmarks, nutrition guidelines, and genealogical certificate storage.", "icon": "/apps/icons/com.michael.bullmastifflog.png", "playLink": "https://play.google.com/store/apps/details?id=com.michael.bullmastifflog", "tags": ["Gamekeeper Logs", "Estate Patrol", "Lineage Tracker", "Bullmastiff Care"], "featured": false}, {"id": "english-mastiff-log", "name": "EnglishMastiffLog: Gentle Giant Book", "packageName": "com.michael.englishmastifflog", "category": "Canine Pedigree Books", "badge": "LIVE ON GOOGLE PLAY", "badgeColor": "#00e5c0", "subtitle": "Old English Mastiff Care, Mass Trajectory & Kennel Ledger", "description": "Comprehensive kennel ledger for English Mastiffs. Growth curves up to 220+ lbs, giant-breed orthopedic milestones, feeding schedules, and kennel pedigree archives.", "icon": "/apps/icons/com.michael.englishmastifflog.png", "playLink": "https://play.google.com/store/apps/details?id=com.michael.englishmastifflog", "tags": ["English Mastiff", "Giant Breed Care", "Growth Trajectory", "Kennel Ledger"], "featured": false}, {"id": "titan-command-center", "name": "Titan Command Center", "packageName": "com.sovereign.titan", "category": "Sovereign Elite", "badge": "AIR-GAPPED SOVEREIGN ASI", "badgeColor": "#a78bfa", "subtitle": "Autonomous Multi-Agent Intelligence Core & Capital Arbiter", "description": "The private autonomous AI infrastructure powering Sovereign Developers. Multi-agent consensus gates, air-gapped security boundaries, continuous telemetry audit scrubs, and 24/7 autonomous release pipelines.", "icon": "/static/titan-chip-icon.png", "playLink": "#about", "tags": ["Autonomous AGI", "Nexus Bridge", "Axiom Auditing", "Multi-Agent Mesh"], "featured": true}];
+
+    // Populate Marquee
+    const marqueeTrack = document.getElementById('marqueeTrack');
+    const doubleApps = [...appsData, ...appsData];
+    doubleApps.forEach(app => {
+      const a = document.createElement('a');
+      a.className = 'marquee-icon-box';
+      a.href = '#' + app.id;
+      a.title = app.name + ' (' + app.category + ')';
+      a.innerHTML = `<img src="${app.icon}" alt="${app.name}" loading="lazy" />`;
+      marqueeTrack.appendChild(a);
+    });
+
+    // Populate Featured
+    const featuredGrid = document.getElementById('featuredGrid');
+    const featuredApps = appsData.filter(a => a.featured);
+    featuredApps.forEach(app => {
+      const card = document.createElement('div');
+      card.className = 'featured-card';
+      card.id = app.id;
+
+      const badgeClass = app.badge.includes('LIVE') ? 'badge-live' : 'badge-elite';
+
+      card.innerHTML = `
+        <div class="featured-top">
+          <img src="${app.icon}" alt="${app.name}" class="featured-icon" />
+          <div>
+            <span class="featured-badge ${badgeClass}">${app.badge}</span>
+            <h3 class="featured-title">${app.name}</h3>
+          </div>
+        </div>
+        <p class="featured-subtitle">${app.subtitle}</p>
+        <p class="featured-body">${app.description}</p>
+        <div class="featured-tags">
+          ${app.tags.map(t => `<span class="tag-pill">${t}</span>`).join('')}
+        </div>
+        <a href="${app.playLink}" target="${app.playLink.startsWith('http') ? '_blank' : '_self'}" rel="noopener" class="play-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          <span>${app.playLink.startsWith('http') ? 'Get on Google Play' : 'Launch Demo'}</span>
+        </a>
+      `;
+      featuredGrid.appendChild(card);
+    });
+
+    // Populate All Apps Grid
+    const appsGrid = document.getElementById('appsGrid');
+    function renderApps(list) {
+      appsGrid.innerHTML = '';
+      if (list.length === 0) {
+        appsGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 48px;">No applications found matching your criteria.</div>';
+        return;
+      }
+      list.forEach(app => {
+        const card = document.createElement('div');
+        card.className = 'app-card';
+        card.id = app.id;
+
+        const isLive = app.badge.includes('LIVE');
+        const badgeColor = isLive ? '#10b981' : (app.badge.includes('ELITE') ? '#8b5cf6' : '#f5c842');
+
+        card.innerHTML = `
+          <div class="app-card-header">
+            <img src="${app.icon}" alt="${app.name}" class="app-card-icon" />
+            <div class="app-card-meta">
+              <span style="display:inline-block; font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:700; color:${badgeColor}; letter-spacing:1px; text-transform:uppercase; margin-bottom:2px;">${app.badge}</span>
+              <h3 class="app-card-title">${app.name}</h3>
+              <p class="app-card-pkg">${app.packageName}</p>
+            </div>
+          </div>
+          <p class="app-card-subtitle">${app.subtitle}</p>
+          <p class="app-card-desc">${app.description}</p>
+          <div class="app-card-footer">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#64748b;">${app.category}</span>
+            <a href="${app.playLink}" target="${app.playLink.startsWith('http') ? '_blank' : '_self'}" rel="noopener" class="store-link">
+              <span>${app.playLink.startsWith('http') ? 'Google Play' : 'Launch'}</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        `;
+        appsGrid.appendChild(card);
+      });
+    }
+
+    renderApps(appsData);
+
+    // Filtering & Search
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    function applyFilter() {
+      const q = searchQuery.toLowerCase().trim();
+      const filtered = appsData.filter(app => {
+        const matchCat = activeCategory === 'all' || app.category === activeCategory;
+        const matchSearch = !q || 
+          app.name.toLowerCase().includes(q) || 
+          app.description.toLowerCase().includes(q) || 
+          app.subtitle.toLowerCase().includes(q) || 
+          app.packageName.toLowerCase().includes(q) ||
+          app.tags.some(t => t.toLowerCase().includes(q));
+        return matchCat && matchSearch;
+      });
+      renderApps(filtered);
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.getAttribute('data-cat');
+        applyFilter();
+      });
+    });
+
+    const searchInput = document.getElementById('appSearch');
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      applyFilter();
+    });
+  </script>
+</body>
 </html>
