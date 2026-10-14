@@ -1013,6 +1013,76 @@
       .featured-grid { grid-template-columns: 1fr; }
       .apps-grid { grid-template-columns: 1fr; }
     }
+
+    /* $HOPE Charity Coin Section */
+    .hope-section {
+      margin-bottom: 90px;
+    }
+    .hope-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(245, 200, 66, 0.28);
+      border-radius: 24px;
+      padding: 48px 40px;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 48px;
+      align-items: center;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+    .hope-mascot-img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 20px;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 40px rgba(245, 200, 66, 0.25));
+    }
+    .hope-tag {
+      color: var(--gold);
+    }
+    .hope-body {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      max-width: 580px;
+    }
+    .hope-buy-btn {
+      background: linear-gradient(135deg, #f5c842 0%, #ff9a3d 100%);
+      font-size: 17px;
+      font-weight: 800;
+      padding: 18px 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 28px rgba(245, 200, 66, 0.4);
+    }
+    .hope-buy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 34px rgba(245, 200, 66, 0.55);
+    }
+    .hope-donate {
+      margin-top: 18px;
+      font-size: 14px;
+    }
+    .hope-donate a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hope-donate a:hover {
+      text-decoration: underline;
+    }
+    .hope-disclaimer {
+      margin-top: 22px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 580px;
+    }
+    @media (max-width: 1024px) {
+      .hope-card { grid-template-columns: 1fr; text-align: center; padding: 40px 24px; }
+      .hope-body, .hope-disclaimer { margin-left: auto; margin-right: auto; }
+    }
   </style>
 </head>
 <body>
@@ -1111,6 +1181,26 @@
     <section class="icon-marquee-container" title="Click any icon to jump to app details">
       <div class="icon-marquee-track" id="marqueeTrack">
         <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- $HOPE Charity Coin -->
+    <section id="hope" class="hope-section">
+      <div class="hope-card">
+        <div class="hope-media">
+          <img src="/static/hope-mascot.webp" alt="$HOPE mascot — a young superhero holding a glowing heart balloon" class="hope-mascot-img" />
+        </div>
+        <div class="hope-content">
+          <span class="section-tag hope-tag">Community Charity Coin &bull; Solana</span>
+          <h2 class="section-title">$HOPE — Hope for Every Kid Fighting</h2>
+          <p class="hope-body">$HOPE is a community meme coin on Solana, launched on Pump.fun. Every trade generates creator fees — and 50% of those fees are donated to Riley Children's Foundation to support pediatric health, while the other 50% funds development, infrastructure, and operations.</p>
+          <a href="https://pump.fun/coin/5nCAk8Hv2Kburi58gemitNykTEVDE2Qj6nTz2mk6pump" target="_blank" rel="noopener" class="btn-primary hope-buy-btn">
+            <span>Buy $HOPE on Pump.fun</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <p class="hope-donate"><a href="https://thegivingblock.com/donate/riley-childrens-endowment/" target="_blank" rel="noopener">Prefer to give directly? Donate to Riley Children's Foundation →</a></p>
+          <p class="hope-disclaimer">An independent community initiative supporting pediatric health. 50% of earned creator fees are donated directly to Riley Children's Foundation; 50% funds development, infrastructure, and operations. Unofficial community tribute; not formally affiliated with or endorsed by Riley Hospital.</p>
+        </div>
       </div>
     </section>
 
