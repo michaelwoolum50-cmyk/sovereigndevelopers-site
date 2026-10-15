@@ -682,24 +682,5 @@
       "Kennel Ledger"
     ],
     "featured": false
-  },
-  {
-    "id": "titan-command-center",
-    "name": "Titan Command Center",
-    "packageName": "com.sovereign.titan",
-    "category": "Sovereign Elite",
-    "badge": "AIR-GAPPED SOVEREIGN ASI",
-    "badgeColor": "#a78bfa",
-    "subtitle": "Autonomous Multi-Agent Intelligence Core & Capital Arbiter",
-    "description": "The private autonomous AI infrastructure powering Sovereign Developers. Multi-agent consensus gates, air-gapped security boundaries, continuous telemetry audit scrubs, and 24/7 autonomous release pipelines.",
-    "icon": "/static/titan-chip-icon.png",
-    "playLink": "#about",
-    "tags": [
-      "Autonomous AGI",
-      "Nexus Bridge",
-      "Axiom Auditing",
-      "Multi-Agent Mesh"
-    ],
-    "featured": true
   }
 ]
