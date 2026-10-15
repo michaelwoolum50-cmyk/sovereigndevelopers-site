@@ -165,9 +165,9 @@
     }
 
     .nav-cta {
-      background: linear-gradient(135deg, rgba(0, 229, 192, 0.15), rgba(0, 180, 216, 0.15));
-      border: 1px solid var(--cyan);
-      color: var(--cyan);
+      background: linear-gradient(135deg, #006090 0%, #0078c0 100%);
+      border: 1px solid #0078c0;
+      color: #ffffff;
       padding: 8px 18px;
       border-radius: 8px;
       font-family: 'Orbitron', monospace;
@@ -178,13 +178,13 @@
       cursor: pointer;
       text-decoration: none;
       transition: all 0.25s ease;
-      box-shadow: 0 0 12px rgba(0, 229, 192, 0.15);
+      box-shadow: 0 0 12px rgba(0, 120, 192, 0.35);
     }
 
     .nav-cta:hover {
-      background: var(--cyan);
-      color: #05070d;
-      box-shadow: 0 0 24px var(--cyan-glow);
+      background: linear-gradient(135deg, #0078c0 0%, #4ab1d9 100%);
+      color: #ffffff;
+      box-shadow: 0 0 24px rgba(0, 120, 192, 0.55);
       transform: translateY(-1px);
     }
 
@@ -258,6 +258,19 @@
       letter-spacing: 3px;
     }
 
+    .hero-title .sovereign-text {
+      background: linear-gradient(135deg, #0068a1 0%, #0078c0 55%, #4ab1d9 100%);
+      background-size: 180% 180%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: sovereignShift 9s ease-in-out infinite alternate;
+    }
+
+    @keyframes sovereignShift {
+      0% { background-position: 0% 40%; }
+      100% { background-position: 100% 60%; }
+    }
+
     .hero-divider {
       display: flex;
       align-items: center;
@@ -294,8 +307,8 @@
 
     .hero-slogan strong {
       font-weight: 700;
-      color: var(--cyan);
-      text-shadow: 0 0 16px var(--cyan-glow);
+      color: #0078c0;
+      text-shadow: 0 0 16px rgba(0, 120, 192, 0.55);
     }
 
     .hero-desc {
@@ -315,8 +328,8 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #00e5c0 0%, #0099ff 100%);
-      color: #05070d;
+      background: linear-gradient(135deg, #006090 0%, #0078c0 100%);
+      color: #ffffff;
       font-weight: 700;
       font-size: 14px;
       letter-spacing: 0.5px;
@@ -327,12 +340,13 @@
       align-items: center;
       gap: 10px;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 4px 20px rgba(0, 229, 192, 0.35);
+      box-shadow: 0 4px 20px rgba(0, 120, 192, 0.35);
     }
 
     .btn-primary:hover {
+      background: linear-gradient(135deg, #0078c0 0%, #4ab1d9 100%);
       transform: translateY(-2px);
-      box-shadow: 0 6px 30px rgba(0, 229, 192, 0.55);
+      box-shadow: 0 6px 30px rgba(0, 120, 192, 0.55);
     }
 
     .btn-secondary {
@@ -1185,7 +1199,7 @@
         </div>
 
         <h1 class="hero-title">
-          SOVEREIGN<br />
+          <span class="sovereign-text">SOVEREIGN</span><br />
           <span class="gradient-text">DEVELOPERS</span>
         </h1>
 
