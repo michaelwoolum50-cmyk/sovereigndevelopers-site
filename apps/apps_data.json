@@ -361,6 +361,25 @@
     "featured": false
   },
   {
+    "id": "forever-spark",
+    "name": "Forever Spark: Dating Wingman",
+    "packageName": "com.sovereigndevelopers.foreverspark",
+    "category": "AI & Social",
+    "badge": "LIVE ON GOOGLE PLAY",
+    "badgeColor": "#00e5c0",
+    "subtitle": "In-Ear AI Dating Coach: Live Whispers, Red-Flag Radar & Bailout SOS",
+    "description": "Your AI wingman in your ear on every date. Live whisper coaching while you talk, a red-flag radar that flags trouble early, openers that land, and a one-tap bailout SOS when a date goes sideways.",
+    "icon": "/apps/icons/com.sovereigndevelopers.foreverspark.png",
+    "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndevelopers.foreverspark",
+    "tags": [
+      "In-Ear AI Coach",
+      "Red-Flag Radar",
+      "Bailout SOS",
+      "Openers"
+    ],
+    "featured": false
+  },
+  {
     "id": "aci-trainer",
     "name": "ACI Trainer: Train Your AI",
     "packageName": "com.sovereigndevelopers.aci",
