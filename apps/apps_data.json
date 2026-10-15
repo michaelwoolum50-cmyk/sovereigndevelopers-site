@@ -21,14 +21,14 @@
   {
     "id": "midnight-confession",
     "name": "Midnight Confession",
-    "packageName": "com.sovereigndevelopers.midnightconfession",
+    "packageName": "com.sovereigndevelopers.midnightconfessions",
     "category": "Sovereign Elite",
-    "badge": "",
+    "badge": "LIVE ON GOOGLE PLAY",
     "badgeColor": "#00e5c0",
     "subtitle": "Anonymous Mutual-Unlock Audio Confessions & Secrets",
     "description": "Everyone has a confession; midnight is when they come out. Anonymously vent, confess, and connect in a sovereign space sorted by Vents, Secrets, Dreams, Gratitude, and Late Night Thoughts.",
-    "icon": "/apps/icons/midnight-confession.png",
-    "playLink": "",
+    "icon": "/apps/icons/com.sovereigndevelopers.midnightconfessions.png",
+    "playLink": "https://play.google.com/store/apps/details?id=com.sovereigndevelopers.midnightconfessions",
     "tags": [
       "Anonymous Voice",
       "Mutual Unlock",
