@@ -385,24 +385,18 @@
       object-position: center 38%;
     }
 
-    .hero-wall-side {
-      right: 0;
-      top: 0;
-      height: 135%;
-      width: auto;
-    }
-
     .hero-chip-ghost {
       position: absolute;
-      top: 50%;
+      top: 63%;
       right: 3%;
-      height: 98%;
+      height: 92%;
       width: auto;
       transform: translateY(-50%);
-      opacity: 0.3;
+      opacity: 0.5;
       mix-blend-mode: screen;
-      -webkit-mask-image: radial-gradient(ellipse 68% 72% at 50% 50%, #000 45%, transparent 78%);
-      mask-image: radial-gradient(ellipse 68% 72% at 50% 50%, #000 45%, transparent 78%);
+      filter: blur(1.5px);
+      -webkit-mask-image: radial-gradient(ellipse 72% 76% at 50% 50%, #000 30%, transparent 65%);
+      mask-image: radial-gradient(ellipse 72% 76% at 50% 50%, #000 30%, transparent 65%);
       pointer-events: none;
       z-index: 0;
       animation: driftChip 18s ease-in-out infinite;
@@ -1154,8 +1148,7 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-wallpaper" aria-hidden="true">
-        <img src="/static/hero-wall-circuit.jpg" alt="" class="hero-wall-main" />
-        <img src="/static/hero-wall-server.jpg" alt="" class="hero-wall-side" />
+        <img src="/static/hero-wall-city.jpg" alt="" class="hero-wall-main" />
       </div>
       <img src="/static/hero-chip.jpg" alt="" aria-hidden="true" class="hero-chip-ghost" />
       <div class="hero-content">
