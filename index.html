@@ -200,6 +200,7 @@
     /* Hero Section */
     .hero-section {
       position: relative;
+      overflow: hidden;
       padding: 60px 0 80px;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
@@ -355,43 +356,53 @@
       color: var(--cyan);
     }
 
-    .hero-visual-card {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-chip-img {
-      width: 100%;
-      max-width: 480px;
-      height: auto;
-      border-radius: 20px;
-      filter: drop-shadow(0 0 50px rgba(0, 229, 192, 0.3));
-      animation: floatChip 6s ease-in-out infinite;
-    }
-
-    @keyframes floatChip {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-12px) rotate(0.5deg); }
-    }
-
-    .hero-content,
-    .hero-visual-card {
+    .hero-content {
       position: relative;
       z-index: 1;
     }
 
-    .hero-bg-chip {
+    .hero-wallpaper {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+      -webkit-mask-image: radial-gradient(ellipse 88% 82% at 50% 46%, #000 52%, transparent 97%);
+      mask-image: radial-gradient(ellipse 88% 82% at 50% 46%, #000 52%, transparent 97%);
+    }
+
+    .hero-wallpaper img {
+      position: absolute;
+      filter: brightness(0.72) saturate(0.85) blur(2px);
+    }
+
+    .hero-wall-main {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+    }
+
+    .hero-wall-side {
+      right: 0;
+      top: 0;
+      height: 135%;
+      width: auto;
+    }
+
+    .hero-chip-ghost {
       position: absolute;
       top: 50%;
-      right: 0;
-      width: 62%;
-      max-width: 880px;
-      height: auto;
+      right: 3%;
+      height: 98%;
+      width: auto;
       transform: translateY(-50%);
-      opacity: 0.16;
+      opacity: 0.3;
       mix-blend-mode: screen;
+      -webkit-mask-image: radial-gradient(ellipse 68% 72% at 50% 50%, #000 45%, transparent 78%);
+      mask-image: radial-gradient(ellipse 68% 72% at 50% 50%, #000 45%, transparent 78%);
       pointer-events: none;
       z-index: 0;
       animation: driftChip 18s ease-in-out infinite;
@@ -1026,7 +1037,6 @@
       .hero-desc { margin-left: auto; margin-right: auto; }
       .hero-actions { justify-content: center; }
       .hero-divider { justify-content: center; }
-      .hero-visual-card { order: -1; }
       .metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 32px; }
       .metric-cell:not(:last-child)::after { display: none; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -1143,7 +1153,11 @@
   <main>
     <!-- Hero Section -->
     <section class="hero-section">
-      <img src="/static/hero-chip-iso.jpg" alt="" aria-hidden="true" class="hero-bg-chip" />
+      <div class="hero-wallpaper" aria-hidden="true">
+        <img src="/static/hero-wall-circuit.jpg" alt="" class="hero-wall-main" />
+        <img src="/static/hero-wall-server.jpg" alt="" class="hero-wall-side" />
+      </div>
+      <img src="/static/hero-chip.jpg" alt="" aria-hidden="true" class="hero-chip-ghost" />
       <div class="hero-content">
         <div class="badge-pill">
           <span class="badge-pulse"></span>
@@ -1180,9 +1194,6 @@
         </div>
       </div>
 
-      <div class="hero-visual-card">
-        <img src="/static/hero-chip-top.jpg" alt="Sovereign Developers stacked infinity chip" class="hero-chip-img" />
-      </div>
     </section>
 
     <!-- Metrics Strip -->
