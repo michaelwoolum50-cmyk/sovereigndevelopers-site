@@ -24,6 +24,28 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://sovereigndevelopers.org"
 DATA = ROOT / "apps" / "apps_data.json"
 BRAND = "Sovereign Developers"
+# Community links shown on every app page (leave "" to hide one).
+TELEGRAM_URL = "https://t.me/sovereignapps"
+DISCORD_URL = ""
+
+
+def community_links():
+  links = []
+  if TELEGRAM_URL:
+    links.append(f'<a href="{TELEGRAM_URL}" rel="noopener">Telegram</a>')
+  if DISCORD_URL:
+    links.append(f'<a href="{DISCORD_URL}" rel="noopener">Discord</a>')
+  return links
+
+
+def community_block():
+  links = community_links()
+  if not links:
+    return ""
+  return ('<section style="background:#0a1f3a;border:1px solid #0d2847;border-radius:12px;padding:16px 18px">'
+          '<h2>Get a free app pick every day</h2>'
+          f'<p>Follow {BRAND} on ' + " or ".join(links) +
+          ' for a new free Android app every day, plus updates on new releases.</p></section>')
 
 E = html.escape
 
@@ -95,9 +117,10 @@ footer{{text-align:center;color:#7a9cc0;font-size:.85rem;padding:24px;border-top
 {tags_block}
 <section><h2>Details</h2>
 <p>Category: {category}<br>Platform: Android<br>Developer: {brand}{pkg_line}</p></section>
+{community_block}
 {related_block}
 </main>
-<footer>&copy; {year} {brand} &middot; <a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/apps/">All apps</a></footer>
+<footer>&copy; {year} {brand} &middot; <a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/apps/">All apps</a>{community_footer}</footer>
 </body>
 </html>
 """
@@ -164,6 +187,8 @@ def build_app_page(app, all_apps):
       category=E(app.get("category") or "Apps"),
       pkg_line=f"<br>Package: {E(pkg)}" if pkg else "",
       related_block=related_block, year=date.today().year,
+      community_block=community_block(),
+      community_footer="".join(" &middot; " + l for l in community_links()),
   ), live
 
 
@@ -227,7 +252,10 @@ def inject_links(live_apps):
            '<section style="max-width:1240px;margin:40px auto 0;padding:0 32px;font-size:.9rem;color:#7a9cc0">'
            '<h2 style="font-size:1rem;margin-bottom:8px;color:#e0eaff">App pages</h2><p>' +
            " &middot; ".join(f'<a href="/apps/{s}/" style="color:#00d4ff">{E(a["name"])}</a>' for s, a in live_apps) +
-           "</p></section>\n<!-- APP-PAGES:END -->")
+           "</p>" +
+           ("<p style=\"margin-top:10px\">Free app pick every day: " + " &middot; ".join(community_links()) + "</p>"
+            if community_links() else "") +
+           "</section>\n<!-- APP-PAGES:END -->")
   if "<!-- APP-PAGES:START -->" in src:
     new = re.sub(r"<!-- APP-PAGES:START -->.*?<!-- APP-PAGES:END -->", lambda m: block, src, flags=re.S)
   elif "</main>" in src:
