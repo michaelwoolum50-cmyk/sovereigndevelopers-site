@@ -1,0 +1,30 @@
+name: App of the Day (Discord + Telegram)
+
+on:
+  schedule:
+    - cron: "0 15 * * *"   # every day 15:00 UTC (11am Eastern)
+  workflow_dispatch:
+    inputs:
+      index:
+        description: "Force app number (optional)"
+        required: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Post App of the Day
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
+        run: |
+          if [ -n "${{ github.event.inputs.index }}" ]; then
+            python tools/social_post.py --index "${{ github.event.inputs.index }}"
+          else
+            python tools/social_post.py
+          fi
