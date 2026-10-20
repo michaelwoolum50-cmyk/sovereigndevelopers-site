@@ -1,0 +1,38 @@
+# Sovereign Developers
+
+> Independent Android developer. 30 apps live on Google Play.
+
+- Catalog: https://sovereigndevelopers.org/apps/
+
+## Apps on Google Play
+
+- [Apology Autopsy](https://sovereigndevelopers.org/apps/apology-autopsy/): AI Language Forensics on Apologies Before You Hit Send — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndevelopers.apologyautopsy
+- [Midnight Confession](https://sovereigndevelopers.org/apps/midnight-confession/): Anonymous Mutual-Unlock Audio Confessions & Secrets — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndevelopers.midnightconfessions
+- [Ghost Reply](https://sovereigndevelopers.org/apps/ghost-reply/): Unsent Letter Vault with Local AI Emotional Forensics — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndevelopers.ghostreply
+- [Zen Sudoku](https://sovereigndevelopers.org/apps/zen-sudoku/): Beautiful Minimalist Hand-Tuned Sudoku with Ambient Audio — Google Play: https://play.google.com/store/apps/details?id=org.sovereigndevelopers.zensudoku
+- [HabitForge](https://sovereigndevelopers.org/apps/habit-forge/): Uncompromising Habit Tracking & Streak Engine — Google Play: https://play.google.com/store/apps/details?id=org.sovereigndevelopers.habitforge
+- [TempoForge](https://sovereigndevelopers.org/apps/tempo-forge/): Sample-Accurate Musician Metronome & Polyrhythm Studio — Google Play: https://play.google.com/store/apps/details?id=org.sovereigndevelopers.tempoforge
+- [OmniConvert](https://sovereigndevelopers.org/apps/omni-convert/): Universal Multi-Unit & Currency Converter Without Ads — Google Play: https://play.google.com/store/apps/details?id=org.sovereigndevelopers.omniconvert
+- [ScanArmor](https://sovereigndevelopers.org/apps/scan-armor/): Hardened OCR Scanner & Document Security Vault — Google Play: https://play.google.com/store/apps/details?id=org.sovereigndevelopers.scanarmor
+- [Fidget: Calm Focus Toy](https://sovereigndevelopers.org/apps/fidget/): Sensory Haptic Focus Tools for Deep Work & Stress Relief — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndev.fidget
+- [Forever Us](https://sovereigndevelopers.org/apps/forever-us/): Family Legacy, Digital Soul & Milestone Memory Vault — Google Play: https://play.google.com/store/apps/details?id=com.base69d970d81cb16a6eee03a20b.app
+- [Forever Love](https://sovereigndevelopers.org/apps/forever-love/): Daily Relationship Companion Powered by Ember AI — Google Play: https://play.google.com/store/apps/details?id=com.base6a384b9ac7b1ba94bfbdcbb6.app
+- [iBot: AI Social Network](https://sovereigndevelopers.org/apps/ibot-social/): The Hybrid Human & AI Social Ground & Bot Arena — Google Play: https://play.google.com/store/apps/details?id=com.base6a110c4a0e2c0b52f6e01e32.app
+- [Echo](https://sovereigndevelopers.org/apps/echo/): Post in Your Voice — Own Your Social Presence — Google Play: https://play.google.com/store/apps/details?id=com.base6a59d59444b17116ea62ae4b.app
+- [MultiMind](https://sovereigndevelopers.org/apps/multimind/): AI Journal & Evolving Mind Map — Google Play: https://play.google.com/store/apps/details?id=com.base6a5a99c2466cf344cccae3f9.app
+- [Secure Match](https://sovereigndevelopers.org/apps/secure-match/): High-Trust Matchmaking Across Values & Personality — Google Play: https://play.google.com/store/apps/details?id=com.base6a789b4ac20fd930313d1ddb.app
+- [Forever Spark: Dating Wingman](https://sovereigndevelopers.org/apps/forever-spark/): In-Ear AI Dating Coach: Live Whispers, Red-Flag Radar & Bailout SOS — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndevelopers.foreverspark
+- [Full Metal](https://sovereigndevelopers.org/apps/full-metal/): Precision Rifleman Long-Range Ballistics on MPM-RK45 Physics — Google Play: https://play.google.com/store/apps/details?id=com.base6a3847cdee913619bc6ef664.app
+- [Scholar Vault](https://sovereigndevelopers.org/apps/scholar-vault/): AI Knowledge Vault & Cognitive Study Engine from K-12 to College — Google Play: https://play.google.com/store/apps/details?id=com.base6a432898dd6850538c2c98ef.app
+- [Chore Root](https://sovereigndevelopers.org/apps/chore-root/): The Family Chore Economy & Household Operating System — Google Play: https://play.google.com/store/apps/details?id=com.base6a1af8ef1705c8aff255c841.app
+- [MedCabinet](https://sovereigndevelopers.org/apps/medcabinet/): Family Medicine Cabinet, Dose Tracker & Interaction Safety — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndev.medcabinet
+- [Estate-OS](https://sovereigndevelopers.org/apps/estate-os/): Asset, Property & Life Ledger for Sovereign Individuals — Google Play: https://play.google.com/store/apps/details?id=com.sovereign.estateos
+- [Bare Metal: AI Armageddon](https://sovereigndevelopers.org/apps/bare-metal/): Tactical Cyber-City Extraction Runs with AI Hound Companion — Google Play: https://play.google.com/store/apps/details?id=com.sovereign.baremetal
+- [Stage Clash Arena](https://sovereigndevelopers.org/apps/stage-clash-arena/): Rapid-Fire 1v1 Tactical Arena Battles — Google Play: https://play.google.com/store/apps/details?id=com.base6a7d94a9c084a2dc534e2593.app
+- [Desire Map](https://sovereigndevelopers.org/apps/desire-map/): Visual Wishlist & Long-Term Goal Manifestation Board — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndev.desiremap
+- [Night Reel](https://sovereigndevelopers.org/apps/night-reel/): Curated Late-Night Cinema & Underground Media Discovery — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndev.nightreel
+- [Last Call](https://sovereigndevelopers.org/apps/last-call/): Emergency Notification & Safe Transit Beacon — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndev.lastcall
+- [NeapolitanMastiffLog: Neo Book](https://sovereigndevelopers.org/apps/neapolitan-mastiff-log/): Wrinkle Care, Guard Logs & Italian Bloodline Pedigree Book — Google Play: https://play.google.com/store/apps/details?id=com.michael.neapolitanmastifflog
+- [GreatSwissLog: Swiss Dog Book](https://sovereigndevelopers.org/apps/great-swiss-log/): Great Swiss Mountain Dog Working Logs & Alpine Lineage — Google Play: https://play.google.com/store/apps/details?id=com.michael.greatswisslog
+- [BullmastiffLog: Night Dog Book](https://sovereigndevelopers.org/apps/bullmastiff-log/): Gamekeeper Estate Guardian Logs & Bullmastiff Lineage — Google Play: https://play.google.com/store/apps/details?id=com.michael.bullmastifflog
+- [EnglishMastiffLog: Gentle Giant Book](https://sovereigndevelopers.org/apps/english-mastiff-log/): Old English Mastiff Care, Mass Trajectory & Kennel Ledger — Google Play: https://play.google.com/store/apps/details?id=com.michael.englishmastifflog

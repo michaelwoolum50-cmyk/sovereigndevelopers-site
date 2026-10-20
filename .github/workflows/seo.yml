@@ -1,0 +1,64 @@
+name: SEO pages + search engine ping
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/apps_data.json"
+      - "tools/**"
+      - ".github/workflows/seo.yml"
+  schedule:
+    - cron: "17 9 * * 1"   # every Monday 09:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build app pages, sitemap, robots, llms.txt, feed
+        run: python tools/build_pages.py
+
+      - name: Commit generated files (if changed)
+        run: |
+          git config user.name "seo-bot"
+          git config user.email "seo-bot@users.noreply.github.com"
+          git add -A apps sitemap.xml robots.txt llms.txt feed.xml
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "SEO: regenerate app pages and sitemap"
+            git push
+            echo "Waiting for GitHub Pages to publish..."
+            sleep 120
+          fi
+
+      - name: Submit sitemap URLs to IndexNow (Bing, Yandex, Seznam, Naver, Yep)
+        run: |
+          python - <<'PY'
+          import json, re, urllib.request
+          key = open("tools/indexnow_key").read().strip()
+          urls = re.findall(r"<loc>([^<]+)</loc>", open("sitemap.xml", encoding="utf-8").read())
+          body = json.dumps({
+              "host": "sovereigndevelopers.org",
+              "key": key,
+              "keyLocation": f"https://sovereigndevelopers.org/{key}.txt",
+              "urlList": urls,
+          }).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  print("IndexNow:", r.status, "for", len(urls), "urls")
+          except urllib.error.HTTPError as e:
+              print("IndexNow HTTP", e.code, e.read()[:300])
+              # 202 = accepted/pending key check; 403 = key not live yet (next run will succeed)
+          PY
