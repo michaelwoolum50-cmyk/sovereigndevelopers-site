@@ -1,4 +1,4 @@
-name: App of the Day (Discord + Telegram)
+name: App of the Day (Discord + Telegram + Mastodon + Bluesky)
 
 on:
   schedule:
@@ -22,6 +22,10 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
         run: |
           if [ -n "${{ github.event.inputs.index }}" ]; then
             python tools/social_post.py --index "${{ github.event.inputs.index }}"

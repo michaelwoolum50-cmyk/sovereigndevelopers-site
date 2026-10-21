@@ -26,6 +26,8 @@ DATA = ROOT / "apps" / "apps_data.json"
 BRAND = "Sovereign Developers"
 # Community links shown on every app page (leave "" to hide one).
 TELEGRAM_URL = "https://t.me/sovereignapps"
+MASTODON_URL = "https://mastodon.social/@sovereign_developers"
+BLUESKY_URL = "https://bsky.app/profile/sovereigndeveloper.bsky.social"
 DISCORD_URL = ""
 
 
@@ -33,6 +35,10 @@ def community_links():
   links = []
   if TELEGRAM_URL:
     links.append(f'<a href="{TELEGRAM_URL}" rel="noopener">Telegram</a>')
+  if MASTODON_URL:
+    links.append(f'<a href="{MASTODON_URL}" rel="me noopener">Mastodon</a>')
+  if BLUESKY_URL:
+    links.append(f'<a href="{BLUESKY_URL}" rel="noopener">Bluesky</a>')
   if DISCORD_URL:
     links.append(f'<a href="{DISCORD_URL}" rel="noopener">Discord</a>')
   return links
