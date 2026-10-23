@@ -1,0 +1,49 @@
+The Briggs Budget System — Template
+MONTHLY BUDGET
+Category,Planned,Actual,Difference
+Housing,,,
+Utilities,,,
+Food (groceries),,,
+Eating out,,,
+Transport,,,
+Debts (minimums),,,
+Household & personal,,,
+Fun,,,
+Savings,,,
+TOTAL OUT,,,=SUM(C3:C11)
+INCOME IN,,,
+THE NUMBER,,,=D13-D12
+
+WRITE YOUR NUMBER DOWN
+Month,In,Out,The Number
+Jan,,,=B20-C20
+Feb,,,=B21-C21
+Mar,,,=B22-C22
+Apr,,,=B23-C23
+May,,,=B24-C24
+Jun,,,=B25-C25
+Jul,,,=B26-C26
+Aug,,,=B27-C27
+Sep,,,=B28-C28
+Oct,,,=B29-C29
+Nov,,,=B30-C30
+Dec,,,=B31-C31
+
+DEBT PAYOFF — SMALLEST FIRST
+Debt,Balance,Minimum,Paid off (date)
+
+,,,,
+
+,,,,
+
+,,,,
+
+,,,,
+
+,,,,
+
+,,,,
+
+,,,,
+
+,,,,
