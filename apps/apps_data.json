@@ -384,7 +384,7 @@
   "name": "ACI Trainer: Train Your AI",
   "packageName": "com.sovereigndevelopers.aci",
   "category": "AI & Social",
-  "badge": "INTERACTIVE DEMO LIVE",
+  "badge": "WEB DEMO LIVE",
   "badgeColor": "#00e5c0",
   "subtitle": "Artificial Career Intelligence & Autonomous University Simulation",
   "description": "Train, evaluate, and benchmark your personal AI agent through structured curricula, practical exams, and multi-round challenges. Play the live university simulation harness directly on web.",
