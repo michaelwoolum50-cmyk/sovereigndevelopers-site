@@ -1,6 +1,6 @@
 # Sovereign Developers
 
-> Independent Android developer. 27 apps live on Google Play.
+> Independent Android developer. 41 apps live on Google Play.
 
 - Catalog: https://sovereigndevelopers.org/apps/
 
@@ -8,6 +8,9 @@
 
 - [Apology Autopsy](https://sovereigndevelopers.org/apps/apology-autopsy/): AI Language Forensics on Apologies Before You Hit Send — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndevelopers.apologyautopsy
 - [Midnight Confession](https://sovereigndevelopers.org/apps/midnight-confession/): Anonymous Mutual-Unlock Audio Confessions & Secrets — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndevelopers.midnightconfessions
+- [Third Wheel](https://sovereigndevelopers.org/apps/third-wheel/): Unbiased AI Relationship Coach Inside Shared Couples Notes — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndevelopers.thirdwheel
+- [Hush Money](https://sovereigndevelopers.org/apps/hush-money/): Anonymous Compensation & Net Worth Reality-Check Engine — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndevelopers.hushmoney
+- [Death Day](https://sovereigndevelopers.org/apps/death-day/): Autonomous Wake Celebration & Legacy Directives Suite — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndevelopers.deathday
 - [Zen Sudoku](https://sovereigndevelopers.org/apps/zen-sudoku/): Beautiful Minimalist Hand-Tuned Sudoku with Ambient Audio — Google Play: https://play.google.com/store/apps/details?id=org.sovereigndevelopers.zensudoku
 - [HabitForge](https://sovereigndevelopers.org/apps/habit-forge/): Uncompromising Habit Tracking & Streak Engine — Google Play: https://play.google.com/store/apps/details?id=org.sovereigndevelopers.habitforge
 - [TempoForge](https://sovereigndevelopers.org/apps/tempo-forge/): Sample-Accurate Musician Metronome & Polyrhythm Studio — Google Play: https://play.google.com/store/apps/details?id=org.sovereigndevelopers.tempoforge
@@ -33,3 +36,14 @@
 - [GreatSwissLog: Swiss Dog Book](https://sovereigndevelopers.org/apps/great-swiss-log/): Great Swiss Mountain Dog Working Logs & Alpine Lineage — Google Play: https://play.google.com/store/apps/details?id=com.michael.greatswisslog
 - [BullmastiffLog: Night Dog Book](https://sovereigndevelopers.org/apps/bullmastiff-log/): Gamekeeper Estate Guardian Logs & Bullmastiff Lineage — Google Play: https://play.google.com/store/apps/details?id=com.michael.bullmastifflog
 - [EnglishMastiffLog: Gentle Giant Book](https://sovereigndevelopers.org/apps/english-mastiff-log/): Old English Mastiff Care, Mass Trajectory & Kennel Ledger — Google Play: https://play.google.com/store/apps/details?id=com.michael.englishmastifflog
+- [Finance Hub: Money & Budget](https://sovereigndevelopers.org/apps/finance-hub/): Track spending, kill subscriptions, and see your money runway — free app. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.finance
+- [Entertainment Hub](https://sovereigndevelopers.org/apps/entertainment-hub/): Dreams, nostalgia, story plots & fidget — 29 modules of fun, totally free. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.entertainment
+- [Relationships Hub: Clarity](https://sovereigndevelopers.org/apps/relationships-hub/): Decode mixed signals & fix apologies. Private dating clarity tools for love. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.relationships
+- [Lifestyle Hub: Own Your Day](https://sovereigndevelopers.org/apps/lifestyle-hub/): Sunset radar, outfit picker, craving spots & fridge watchdog — your free hub. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.lifestyle
+- [Productivity Matrix: Deep Work](https://sovereigndevelopers.org/apps/productivity-hub/): Kill procrastination: focus timer, decision lock, AI agents & 3 AM idea capture. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.productivity
+- [Family Hub: Hearth & Legacy](https://sovereigndevelopers.org/apps/family-hub/): Record grandma's stories, seal legacy letters & keep every family moment safe. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.family
+- [Health Hub: Wellness & Habits](https://sovereigndevelopers.org/apps/health-hub/): Track habits, sleep, hydration & mindful routines in one wellness hub. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.health
+- [Tool Hub: AI Utilities](https://sovereigndevelopers.org/apps/tool-hub/): 70 AI tools — weld inspector, lease reader, pet triage. Free & offline. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.tool
+- [Social Matrix: Confessions](https://sovereigndevelopers.org/apps/social-hub/): Confess anonymously, unlock soulprints, dissolve grudges. Free forever. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.social
+- [Consumer Lifestyle Hub](https://sovereigndevelopers.org/apps/consumer-lifestyle-hub/): Sunset radar, outfit picker, craving spots & fridge watchdog — your free hub. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.consumer_lifestyle
+- [Game Matrix — Puzzle Arcade](https://sovereigndevelopers.org/apps/game-hub/): Over 100 tactical mini-games and puzzles in one seamless casual gaming hub. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.game
