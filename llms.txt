@@ -1,6 +1,6 @@
 # Sovereign Developers
 
-> Independent Android developer. 41 apps live on Google Play.
+> Independent Android developer. 43 apps live on Google Play.
 
 - Catalog: https://sovereigndevelopers.org/apps/
 
@@ -47,3 +47,5 @@
 - [Social Matrix: Confessions](https://sovereigndevelopers.org/apps/social-hub/): Confess anonymously, unlock soulprints, dissolve grudges. Free forever. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.social
 - [Consumer Lifestyle Hub](https://sovereigndevelopers.org/apps/consumer-lifestyle-hub/): Sunset radar, outfit picker, craving spots & fridge watchdog — your free hub. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.consumer_lifestyle
 - [Game Matrix — Puzzle Arcade](https://sovereigndevelopers.org/apps/game-hub/): Over 100 tactical mini-games and puzzles in one seamless casual gaming hub. — Google Play: https://play.google.com/store/apps/details?id=com.michael.hubs.game
+- [AI Forge](https://sovereigndevelopers.org/apps/ai-forge/): Forge, merge, and evolve an autonomous synthetic superintelligence. — Google Play: https://play.google.com/store/apps/details?id=com.sovereigndevelopers.aiforge
+- [Code Assembly: Learn to Code](https://sovereigndevelopers.org/apps/code-assembly/): Track coding projects step-by-step: curriculum, help desk, tips — all on-device. — Google Play: https://play.google.com/store/apps/details?id=com.codeassembly.app
