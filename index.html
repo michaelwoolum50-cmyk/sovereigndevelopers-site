@@ -1176,7 +1176,7 @@
 
     <ul class="nav-links">
       <li><a href="#featured">Flagships</a></li>
-      <li><a href="#products">The Fleet (48)</a></li>
+      <li><a href="#products">The Fleet (<span data-suite-count>59</span>)</a></li>
       <li><a href="#architecture">Architecture</a></li>
       <li><a href="/data-deletion">Data Deletion</a></li>
       <li><a href="/privacy-policy">Privacy</a></li>
@@ -1195,7 +1195,7 @@
       <div class="hero-content">
         <div class="badge-pill">
           <span class="badge-pulse"></span>
-          <span>Google Play Publisher &bull; 41 Apps Live on Google Play</span>
+          <span>Google Play Publisher &bull; <span data-live-count>43</span> Apps Live on Google Play</span>
         </div>
 
         <h1 class="hero-title">
@@ -1219,7 +1219,7 @@
 
         <div class="hero-actions">
           <a href="#products" class="btn-primary">
-            <span>Explore the 59-App Suite</span>
+            <span>Explore the <span data-suite-count>59</span>-App Suite</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
           <a href="#architecture" class="btn-secondary">
@@ -1233,7 +1233,7 @@
     <!-- Metrics Strip -->
     <section class="metrics-strip">
       <div class="metric-cell">
-        <div class="metric-val">43</div>
+        <div class="metric-val" data-live-count>43</div>
         <div class="metric-lbl">Apps Live on Google Play</div>
       </div>
       <div class="metric-cell">
@@ -1306,7 +1306,7 @@
       </div>
     </section>
 
-    <!-- Complete 59-App Suite Explorer -->
+    <!-- Complete <span data-suite-count>59</span>-App Suite Explorer -->
     <section id="products" class="explorer-section">
       <div class="section-header">
         <span class="section-tag">Complete Catalog</span>
@@ -1429,7 +1429,7 @@
       <div>&copy; 2026 Sovereign Developers LLC. All rights reserved. Tomorrow's Edge at Scale.</div>
       <div class="system-status">
         <span class="status-dot"></span>
-        <span>ALL SYSTEMS NOMINAL &bull; 43 APPS LIVE ON GOOGLE PLAY</span>
+        <span>ALL SYSTEMS NOMINAL &bull; <span data-live-count>43</span> APPS LIVE ON GOOGLE PLAY</span>
       </div>
     </div>
   </footer>
@@ -2669,6 +2669,18 @@
       searchQuery = e.target.value;
       applyFilter();
     });
+  </script>
+
+  <!-- Live counts: fed from appsData so the numbers can never drift again -->
+  <script>
+  (function () {
+    try {
+      var live = appsData.filter(function (a) { return a.playLink; }).length;
+      var suite = appsData.length;
+      document.querySelectorAll('[data-live-count]').forEach(function (el) { el.textContent = live; });
+      document.querySelectorAll('[data-suite-count]').forEach(function (el) { el.textContent = suite; });
+    } catch (e) {}
+  })();
   </script>
 </body>
 </html>
